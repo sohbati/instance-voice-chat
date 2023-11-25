@@ -1,0 +1,25 @@
+
+9
+	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+k
+;src/test/java/org/acme/mongodb/panache/MongoDbResource.java,9/8/987c6319e05cb012bf43ed3a987a79f6ed780b3b
+i
+9src/main/java/org/acme/mongodb/panache/entity/Person.java,f/5/f5e4c35612daa5af130b50cf2f829279e249c93b
+i
+9src/main/java/org/acme/mongodb/panache/entity/Status.java,8/c/8c9161cebca3d3f516bb5f56d42a84b7f1e55eb6
+m
+=src/main/java/org/acme/mongodb/panache/repository/Person.java,3/5/355b306f51d5e0c9e27181b56b1577cf29f7c41a
+w
+Gsrc/main/java/org/acme/mongodb/panache/repository/PersonRepository.java,a/3/a3c20605a82db212a05bcf953072958797f432a2
+u
+Esrc/main/java/org/acme/mongodb/panache/repository/PersonResource.java,1/a/1aefcd3570d559297fae78dbe4a4d89c04fa281c
+m
+=src/main/java/org/acme/mongodb/panache/repository/Status.java,7/0/70c3d4e8785b3990ac12b0925313b48b84bf68fd
+l
+<src/test/java/org/acme/mongodb/panache/PersonResourceIT.java,1/b/1bd8b3d1b01c5852120593ef0c5326f7a0fea0aa
+n
+>src/test/java/org/acme/mongodb/panache/PersonResourceTest.java,d/5/d540b758ac77f974c99dd037e2abb8fe5decdc8a
+7
+pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
+q
+Asrc/main/java/org/acme/mongodb/panache/entity/PersonResource.java,3/a/3a7d38afed635b766c19fd230970e78f0cc97374
