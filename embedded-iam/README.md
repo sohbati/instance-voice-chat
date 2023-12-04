@@ -1,0 +1,2 @@
+- copied from:
+  - https://github.com/Baeldung/spring-security-oauth/tree/master/oauth-rest/oauth-authorization-server
