@@ -1,0 +1,14 @@
+hystrix.command.fallbackcmd.execution.isolation.thread.timeoutInMilliseconds: 2000
+spring:
+  application:
+    name: api-gateway
+
+server:
+  port: 8888
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
+debug: true

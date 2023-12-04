@@ -7,6 +7,7 @@ import org.bson.codecs.pojo.annotations.BsonProperty;
 
 import io.quarkus.mongodb.panache.common.MongoEntity;
 import io.quarkus.mongodb.panache.PanacheMongoEntity;
+import org.jboss.resteasy.reactive.DateFormat;
 
 @MongoEntity(collection = "ThePerson")
 public class Person extends PanacheMongoEntity {
