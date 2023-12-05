@@ -90,7 +90,10 @@
       <artifactId>quarkus-smallrye-openapi</artifactId>
       <version>3.2.2.Final</version>
     </dependency>
-
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-smallrye-health</artifactId>
+    </dependency>
   </dependencies>
   <build>
     <plugins>
