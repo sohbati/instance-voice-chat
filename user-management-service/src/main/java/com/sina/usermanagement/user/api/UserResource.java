@@ -6,6 +6,7 @@ import com.sina.usermanagement.user.api.record.UserResponseRecord;
 import com.sina.usermanagement.user.service.UserService;
 import jakarta.validation.Valid;
 import jakarta.ws.rs.*;
+import org.eclipse.microprofile.openapi.annotations.Operation;
 
 @Path("/users")
 @Consumes("application/json")
@@ -23,6 +24,7 @@ public class UserResource {
      */
     @GET
     @Path("/{userName}/user-info")
+    @Operation(summary = "Figma Code: api#0001", description = " return user information")
     public UserResponseRecord getUserInfo(String userName) {
         return userService.getUser(userName);
     }
@@ -34,6 +36,7 @@ public class UserResource {
         String id = userService.save(user);
         return UserResponseRecord.builder().id(id).build();
     }
+
     @POST
     @Path("/quick-register")
     public UserResponseRecord quickRegisterNewUser(@Valid QickReqisterUserRequestRecord user) {

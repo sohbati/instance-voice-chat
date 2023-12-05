@@ -10,5 +10,7 @@
 /ZeppelinRemoteNotebooks/
 user-management-service/.idea
 user-management-service/target
+user-management-service/user-management.iml
+user-management-service/user-management-service.iml
 gateway-service/.idea
 gateway-service/target
