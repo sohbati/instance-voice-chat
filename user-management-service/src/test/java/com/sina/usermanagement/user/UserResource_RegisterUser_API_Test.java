@@ -1,16 +1,13 @@
 package com.sina.usermanagement.user;
 
-import com.sina.usermanagement.TestBase;
 import com.sina.usermanagement.infrastructure.exception.ErrorRecord;
-import com.sina.usermanagement.user.api.record.UserResponseRecord;
 import com.sina.usermanagement.user.enumeration.UserErrorCodeEnum;
-import io.quarkus.runtime.util.StringUtil;
 import io.quarkus.test.common.QuarkusTestResource;
 import io.quarkus.test.junit.QuarkusTest;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import jakarta.ws.rs.core.Response;
-import org.acme.mongodb.panache.MongoDbResource;
+import com.sina.usermanagement.infrastructure.mongodb.MongoDbResource;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -111,8 +108,9 @@ public class UserResource_RegisterUser_API_Test extends UserTestBase {
 
 
     void testSaveUser_invalidEmail_AtSignMissed_testImpl() {
+        int sequence = getNewInt();
         String user = "{\n" +
-                "    \"userName\": \"person5\",\n" +
+                "    \"userName\": \"person" + sequence + "\",\n" +
                 "    \"fullName\": \"person personal\",\n" +
                 "    \"gender\": \"male\",\n" +
                 "    \"email\": \"emailgmail.com\"\n" +
@@ -261,17 +259,19 @@ public class UserResource_RegisterUser_API_Test extends UserTestBase {
     }
 
     void testSaveUser_duplicate_usernameImpl() {
+        int sequence = getNewInt();
+        int sequence2 = getNewInt();
         String user1 = "{\n" +
-                "    \"userName\": \"user3\",\n" +
+                "    \"userName\": \"user" + sequence + "\",\n" +
                 "    \"fullName\": \"lowrance \",\n" +
                 "    \"gender\": \"female\",\n" +
-                "    \"email\": \"lowrance2@test.com\"\n" +
+                "    \"email\": \"lowrance" + sequence + "@test.com\"\n" +
                 "}";
         String user2 = "{\n" +
-                "    \"userName\": \"user3\",\n" +
+                "    \"userName\": \"user" + sequence + "\",\n" +
                 "    \"fullName\": \"lowrance \",\n" +
                 "    \"gender\": \"female\",\n" +
-                "    \"email\": \"lowrance3@test.com\"\n" +
+                "    \"email\": \"lowrance" + sequence2 + "@test.com\"\n" +
                 "}";
         restToRegisterUserWith_200_OK_Response(user1);
         ErrorRecord error = restWith400(user2);
@@ -279,18 +279,25 @@ public class UserResource_RegisterUser_API_Test extends UserTestBase {
     }
 
     void testSaveUser_duplicate_emailImpl() {
-        String user1 = "{\n" +
-                "    \"userName\": \"lowrance\",\n" +
-                "    \"fullName\": \"lowrance \",\n" +
-                "    \"gender\": \"female\",\n" +
-                "    \"email\": \"lowrance@test.com\"\n" +
-                "}";
-        String user2 = "{\n" +
-                "    \"userName\": \"lowrance2\",\n" +
-                "    \"fullName\": \"lowrance2 \",\n" +
-                "    \"gender\": \"female\",\n" +
-                "    \"email\": \"lowrance@test.com\"\n" +
-                "}";
+        int sequence = getNewInt();
+        int sequence2 = getNewInt();
+
+        String user1 = """ 
+                    {
+                    "userName": "lowrance%s",
+                    "fullName": "lowrance",
+                    "gender": "female", 
+                    "email": "lowrance%s@gmail.com"
+                    }
+                """.formatted(sequence, sequence);
+        String user2 = """ 
+                    {
+                    "userName": "lowrance%s",
+                    "fullName": "lowrance",
+                    "gender": "female",
+                    "email": "lowrance%s@gmail.com"
+                    }
+                """.formatted(sequence2, sequence);
         restToRegisterUserWith_200_OK_Response(user1);
         ErrorRecord error = restWith400(user2);
         Assertions.assertThat(error.errorCode().equals(UserErrorCodeEnum.EMAIL_ALREADY_EXISTS));

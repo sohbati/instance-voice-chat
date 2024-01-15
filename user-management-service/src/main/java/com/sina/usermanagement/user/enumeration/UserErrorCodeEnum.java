@@ -6,6 +6,7 @@ public enum UserErrorCodeEnum {
 
     USER_NAME_ALREADY_EXISTS(Response.Status.BAD_REQUEST),
     USER_NAME_NOT_FOUND(Response.Status.NOT_FOUND),
+    USER_NOT_FOUND(Response.Status.NOT_FOUND),
 
     EMAIL_IS_NOT_VALID(Response.Status.BAD_REQUEST),
     EMAIL_ALREADY_EXISTS(Response.Status.BAD_REQUEST),

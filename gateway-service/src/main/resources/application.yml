@@ -2,6 +2,8 @@ hystrix.command.fallbackcmd.execution.isolation.thread.timeoutInMilliseconds: 20
 spring:
   application:
     name: api-gateway
+  banner:
+    location: classpath:banner.txt
 
 server:
   port: 8888

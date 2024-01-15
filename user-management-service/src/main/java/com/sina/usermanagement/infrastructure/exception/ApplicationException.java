@@ -24,6 +24,9 @@ public class ApplicationException extends RuntimeException{
         throw new ApplicationException(UserErrorCodeEnum.VALUE_IS_NULL_OR_EMPTY, parameter);
     }
 
+    public static ApplicationException userNotFoundException(String userId) {
+        throw new ApplicationException(UserErrorCodeEnum.USER_NOT_FOUND);
+    }
     public static ApplicationException userNameNotFoundException(String userName) {
         throw new ApplicationException(UserErrorCodeEnum.USER_NAME_NOT_FOUND);
     }

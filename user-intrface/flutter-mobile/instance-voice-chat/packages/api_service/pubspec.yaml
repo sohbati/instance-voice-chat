@@ -1,0 +1,6 @@
+name: api_service
+description: Dart package ser as rest api call
+publish_to: none
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"

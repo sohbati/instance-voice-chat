@@ -1,27 +1,16 @@
 package com.sina.usermanagement.user;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
-import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import com.sina.usermanagement.TestBase;
 import com.sina.usermanagement.infrastructure.exception.ErrorRecord;
 import com.sina.usermanagement.user.api.record.UserResponseRecord;
-import com.sina.usermanagement.user.enumeration.UserErrorCodeEnum;
-import io.quarkus.runtime.util.StringUtil;
 import io.quarkus.test.common.QuarkusTestResource;
 import io.quarkus.test.junit.QuarkusTest;
 import io.restassured.RestAssured;
-import io.restassured.config.ObjectMapperConfig;
 import io.restassured.http.ContentType;
-import io.restassured.parsing.Parser;
 import jakarta.ws.rs.core.Response;
-import org.acme.mongodb.panache.MongoDbResource;
+import com.sina.usermanagement.infrastructure.mongodb.MongoDbResource;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-
-import static io.restassured.config.LogConfig.logConfig;
 
 @QuarkusTest
 @QuarkusTestResource(MongoDbResource.class)
@@ -43,10 +32,10 @@ public class UserResource_userinfo_API_Test extends UserTestBase {
         * 3- assert
         */
         int sequence = getNewInt();
-        testSaveUser_RegisterCompleteUserWithOkResponse(sequence);
+        String userId = testSaveUser_RegisterCompleteUserWithOkResponse(sequence);
         String userName = "user" + sequence;
 
-        UserResponseRecord response = restWithOk(userName);
+        UserResponseRecord response = getUserInfoRestCallWithOkResponse(userId);
         Assertions.assertThat(response.userName()).isEqualTo(userName);
         Assertions.assertThat(response.id()).isNotNull();
         Assertions.assertThat(response.fullName()).isNotBlank();
@@ -55,8 +44,8 @@ public class UserResource_userinfo_API_Test extends UserTestBase {
     }
 
 
-    private UserResponseRecord restWithOk(String userName) {
-        String path = "/users/" + userName + "/user-info";
+    private UserResponseRecord getUserInfoRestCallWithOkResponse(String userId) {
+        String path = "/users/" + userId + "/user-info";
         UserResponseRecord response = RestAssured.given()
                 .contentType(ContentType.JSON)
                 .when()

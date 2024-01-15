@@ -14,3 +14,9 @@ user-management-service/user-management.iml
 user-management-service/user-management-service.iml
 gateway-service/.idea
 gateway-service/target
+user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/
+user-intrface/flutter-mobile/instance-voice-chat/.idea/
+user-intrface/flutter-mobile/instance-voice-chat/.flutter-plugins/
+user-intrface/flutter-mobile/instance-voice-chat/.flutter-plugins-dependencies
+
+embedded-iam/target/

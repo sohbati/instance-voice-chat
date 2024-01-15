@@ -13,12 +13,14 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class UserTestBase extends TestBase {
 
-    protected AtomicInteger sequencer = new AtomicInteger(0);
+    protected static AtomicInteger sequencer = new AtomicInteger(0);
 
     protected int getNewInt() {
-        return sequencer.getAndIncrement();
+        int sequence = sequencer.getAndIncrement();
+        System.out.println("Sequence:" + sequence);
+        return sequence;
     }
-    protected void testSaveUser_RegisterCompleteUserWithOkResponse(int sequence) {
+    protected String testSaveUser_RegisterCompleteUserWithOkResponse(int sequence) {
         UserRequestRecord user  = UserRequestRecord.builder()
                 .userName("user" + sequence)
                 .fullName("user" + sequence)
@@ -28,6 +30,7 @@ public class UserTestBase extends TestBase {
 
         UserResponseRecord response = restToRegisterUserWith_200_OK_Response(jsonString(user));
         Assertions.assertThat(StringUtil.isNullOrEmpty(response.id())).isFalse();
+        return response.id();
     }
 
     protected UserResponseRecord restToRegisterUserWith_200_OK_Response(String json) {

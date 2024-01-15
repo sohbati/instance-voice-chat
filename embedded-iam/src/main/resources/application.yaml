@@ -1,7 +1,12 @@
+
 server:
-  port: 8083
+  port: 8080
 
 spring:
+  application:
+    name: embedded-iam
+  banner:
+    location: classpath:banner.txt
   jpa:
     defer-datasource-initialization: true
   datasource:

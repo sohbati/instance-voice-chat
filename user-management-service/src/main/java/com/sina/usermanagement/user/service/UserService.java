@@ -17,10 +17,10 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public UserResponseRecord getUser(String userName) {
-        User user = userRepository.findByUserName(userName);
+    public UserResponseRecord getUser(String userId) {
+        User user = userRepository.findByUserId(userId);
         if (user == null) {
-            ApplicationException.userNameNotFoundException(userName);
+            ApplicationException.userNotFoundException(userId);
         }
         return map(user);
     }

@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.sina.voicechat</groupId>
 	<artifactId>gateway-service</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>gateway-service</name>
 	<description>Instance voice chat</description>
 
@@ -64,6 +64,23 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>io.fabric8</groupId>
+				<artifactId>docker-maven-plugin</artifactId>
+				<version>0.43.4</version>
+				<configuration>
+					<!-- Docker image configuration -->
+				</configuration>
+				<executions>
+					<execution>
+						<id>build-docker-image</id>
+						<phase>package</phase>
+						<goals>
+							<goal>build</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>

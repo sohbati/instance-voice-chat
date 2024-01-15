@@ -6,6 +6,7 @@ import com.sina.usermanagement.user.api.record.UserResponseRecord;
 import com.sina.usermanagement.user.service.UserService;
 import jakarta.validation.Valid;
 import jakarta.ws.rs.*;
+import lombok.extern.log4j.Log4j2;
 import org.eclipse.microprofile.openapi.annotations.Operation;
 
 @Path("/users")
@@ -23,10 +24,10 @@ public class UserResource {
      * Figma: api#0001
      */
     @GET
-    @Path("/{userName}/user-info")
+    @Path("/{userId}/user-info")
     @Operation(summary = "Figma Code: api#0001", description = " return user information")
-    public UserResponseRecord getUserInfo(String userName) {
-        return userService.getUser(userName);
+    public UserResponseRecord getUserInfo(String userId) {
+        return userService.getUser(userId);
     }
 
 

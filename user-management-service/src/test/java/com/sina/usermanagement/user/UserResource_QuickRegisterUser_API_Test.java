@@ -1,10 +1,5 @@
 package com.sina.usermanagement.user;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
-import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import com.sina.usermanagement.TestBase;
 import com.sina.usermanagement.infrastructure.exception.ErrorRecord;
 import com.sina.usermanagement.user.api.record.UserResponseRecord;
 import com.sina.usermanagement.user.enumeration.UserErrorCodeEnum;
@@ -12,20 +7,16 @@ import io.quarkus.runtime.util.StringUtil;
 import io.quarkus.test.common.QuarkusTestResource;
 import io.quarkus.test.junit.QuarkusTest;
 import io.restassured.RestAssured;
-import io.restassured.config.ObjectMapperConfig;
 import io.restassured.http.ContentType;
-import io.restassured.parsing.Parser;
 import jakarta.ws.rs.core.Response;
-import org.acme.mongodb.panache.MongoDbResource;
+import com.sina.usermanagement.infrastructure.mongodb.MongoDbResource;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import static io.restassured.config.LogConfig.logConfig;
-
 @QuarkusTest
 @QuarkusTestResource(MongoDbResource.class)
-public class UserResource_QuickRegisterUser_API_Test extends TestBase {
+public class UserResource_QuickRegisterUser_API_Test extends UserTestBase {
     @BeforeAll
     public static void initAll() {
         initRestAssured();
@@ -77,7 +68,8 @@ public class UserResource_QuickRegisterUser_API_Test extends TestBase {
     }
 
     public void testSaveUser_happyPassImpl() {
-        String fakeUniqueUserName = "user1";
+        int sequence = getNewInt();
+        String fakeUniqueUserName = "user" + sequence;
         String user = "{\n" +
                 "    \"userName\": \"" + fakeUniqueUserName +"\",\n" +
                 "    \"gender\": \"male\"\n" +
@@ -87,10 +79,11 @@ public class UserResource_QuickRegisterUser_API_Test extends TestBase {
     }
 
     void testSaveUser_username_nullValue_testImpl() {
+        int sequence = getNewInt();
         String user = "{\n" +
                 "    \"fullName\": \"person personal\",\n" +
                 "    \"gender\": \"male\",\n" +
-                "    \"email\": \"email@test.com\"\n" +
+                "    \"email\": \"email " + sequence + "@test.com\"\n" +
                 "}";
         ErrorRecord error = restWith400(user);
         Assertions.assertThat(error.errorCode().equals(UserErrorCodeEnum.VALUE_IS_NULL_OR_EMPTY));
@@ -161,12 +154,13 @@ public class UserResource_QuickRegisterUser_API_Test extends TestBase {
     }
 
     void testSaveUser_duplicate_usernameImpl() {
+        int sequence = getNewInt();
         String user1 = "{\n" +
-                "    \"userName\": \"lowrance\",\n" +
+                "    \"userName\": \"lowrance" + sequence + "\",\n" +
                 "    \"gender\": \"female\"\n" +
                 "}";
         String user2 = "{\n" +
-                "    \"userName\": \"lowrance\",\n" +
+                "    \"userName\": \"lowrance" + sequence + "\",\n" +
                 "    \"gender\": \"female\"\n" +
                 "}";
         restWithOk(user1);

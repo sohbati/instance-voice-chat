@@ -1,4 +1,4 @@
-package org.acme.mongodb.panache;
+package com.sina.usermanagement.infrastructure.mongodb;
 
 import java.util.HashMap;
 import java.util.Map;
