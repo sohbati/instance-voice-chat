@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:instance_voice_chat/login/login.dart';
+import 'package:instance_voice_chat/p02_find_chat_mate_page/p02_find_chat_mate_page.dart';
 
 class MainPageForm extends StatelessWidget {
   const MainPageForm({super.key});
@@ -162,17 +163,28 @@ class MainPageForm extends StatelessWidget {
                     ),
                     child: Align(
                       alignment: Alignment(-0.8, 0.0),
-                      child: Text(
-                        "Connect Now",
-                        textAlign: TextAlign.start,
-                        overflow: TextOverflow.clip,
-                        style: TextStyle(
-                          fontWeight: FontWeight.w700,
-                          fontStyle: FontStyle.normal,
-                          fontSize: 17,
-                          color: Color(0xff000000),
-                        ),
+                      child:
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                            return FindChatMate();
+                          }));
+                        },
+                        child: Text('Connect Now'),
+                        style: ElevatedButton.styleFrom(foregroundColor: Colors.amber),
                       ),
+                      // Text(
+                      //   "Connect Now",
+                      //   textAlign: TextAlign.start,
+                      //   overflow: TextOverflow.clip,
+                      //   style: TextStyle(
+                      //     fontWeight: FontWeight.w700,
+                      //     fontStyle: FontStyle.normal,
+                      //     fontSize: 17,
+                      //     color: Color(0xff000000),
+                      //   ),
+                      // ),
                     ),
                   ),
                 ],

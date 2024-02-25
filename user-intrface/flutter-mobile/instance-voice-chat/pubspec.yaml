@@ -1,0 +1,47 @@
+name: instance_voice_chat
+description: An app to find a language learner friend and have a converation.
+version: 1.0.0+1
+publish_to: none
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  routing_repository:
+    path: packages/routing_repository
+  bloc: ^8.1.0
+  equatable: ^2.0.5
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^8.1.1
+  formz: ^0.6.0
+  user_repository:
+    path: packages/user_repository
+  local_storage:
+    path: packages/local_storage
+  api_service:
+    path: packages/api_service
+  device_info_plus: ^9.1.1
+  shared_preferences: ^2.0.12
+  json_annotation: ^4.0.1
+  get_it: ^7.2.0
+  http: ^1.1.2
+  flutter_webrtc: ^0.9.47
+
+dependency_overrides:
+  bloc:
+    path: ../packages/bloc
+  flutter_bloc:
+    path: ../packages/flutter_bloc
+
+dev_dependencies:
+  bloc_test:
+    path: ../packages/bloc_test
+  flutter_test:
+    sdk: flutter
+  mocktail: ^1.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/boy-avatar.jpeg
