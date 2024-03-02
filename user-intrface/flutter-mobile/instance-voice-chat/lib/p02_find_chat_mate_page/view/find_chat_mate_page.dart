@@ -19,7 +19,7 @@ class FindChatMate extends StatelessWidget {
         padding: const EdgeInsets.all(12),
         child: BlocProvider(
           create: (context) {
-            return LoginBloc(
+            return FindChatMateBloc(
               routingRepository:
                   RepositoryProvider.of<RoutingRepository>(context),
             );

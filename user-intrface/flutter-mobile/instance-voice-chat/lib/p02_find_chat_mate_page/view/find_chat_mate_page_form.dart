@@ -1,22 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:formz/formz.dart';
-import 'package:instance_voice_chat/login/bloc/login_bloc.dart';
+import 'package:instance_voice_chat/p02_find_chat_mate_page/bloc/find_chat_mate_page_bloc.dart';
 
 class FindChatMateForm extends StatelessWidget {
   const FindChatMateForm({super.key});
   @override
   Widget build(BuildContext context) {
     final backgroundColor = Color(0x1f000000);
-    return BlocListener<LoginBloc, LoginState>(
+    return BlocListener<FindChatMateBloc, FindChatMateState>(
       listener: (context, state) {
-        if (state.status.isFailure) {
-          ScaffoldMessenger.of(context)
-            ..hideCurrentSnackBar()
-            ..showSnackBar(
-              const SnackBar(content: Text('Authentication Failure')),
-            );
-        }
       },
       child:  Container(
         margin: EdgeInsets.all(0),

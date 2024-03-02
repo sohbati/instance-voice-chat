@@ -18,6 +18,13 @@ services:
     build:
       context: ./user-management-service
       dockerfile: Dockerfile
-    image: embeded-iam
+    image: user-management-service
     ports:
       - "127.0.0.1:8081:8081"
+  conversation-service:
+    build:
+      context: ./conversation-service
+      dockerfile: Dockerfile
+    image: conversation-service
+    ports:
+      - "127.0.0.1:8082:8082"
