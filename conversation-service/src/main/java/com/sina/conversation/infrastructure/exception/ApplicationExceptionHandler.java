@@ -16,13 +16,14 @@ public class ApplicationExceptionHandler implements ExceptionMapper<ApplicationE
         Locale currentLocale = Locale.getDefault();
         ResourceBundle messages = ResourceBundle.getBundle("messages", currentLocale);
 
-        ErrorRecord error = ErrorRecord.builder()
-                .message(messages.getString(e.getErrorCode().name()))
-                .httpStatus(e.getErrorCode().httpStatus.getStatusCode())
-                .errorCode(e.getErrorCode().name())
-                .params(e.getParams() != null ? e.getParams().toString(): "")
-                .dateTime(LocalDateTime.now())
-        .build();
+
+        ErrorRecord error =  new ErrorRecord(
+                e.getErrorCode().httpStatus.getStatusCode(),
+                e.getErrorCode().name(),
+                messages.getString(e.getErrorCode().name()),
+                LocalDateTime.now(),
+                "",
+                e.getParams() != null ? e.getParams().toString(): "");
 
         return Response.status(e.getErrorCode().httpStatus)
                 .entity(error)

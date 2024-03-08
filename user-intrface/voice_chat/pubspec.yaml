@@ -22,15 +22,19 @@ dependencies:
     path: packages/local_storage
   api_service:
     path: packages/api_service
+
   device_info_plus: ^9.1.1
   shared_preferences: ^2.0.12
   json_annotation: ^4.0.1
   get_it: ^7.2.0
   http: ^1.1.2
-  flutter_webrtc: ^0.9.47
+  flutter_webrtc: ^0.9.48+hotfix.1
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  provider: ^5.0.0
+  web_socket_channel: ^2.4.4
+
 
 flutter_launcher_icons:
   #  image_path: "assets/images/icon-128x128.png"
@@ -66,6 +70,7 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
+  sdp_transform: ^0.3.2
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

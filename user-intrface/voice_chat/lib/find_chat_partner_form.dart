@@ -1,4 +1,11 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:voice_chat/webrtc/webrtc-helper.dart';
+import 'package:voice_chat/websocket/websocket-helper.dart';
+
+import 'package:flutter_webrtc/flutter_webrtc.dart';
+import 'package:sdp_transform/sdp_transform.dart';
 
 class FindChatPartnerForm extends StatefulWidget {
   const FindChatPartnerForm({super.key});
@@ -8,9 +15,56 @@ class FindChatPartnerForm extends StatefulWidget {
 }
 
 class _FindChatPartnerFormState extends State<FindChatPartnerForm> {
+
+  WebSocketHelper _webSocketHelper = new WebSocketHelper();
+  WebRTCHelper _webRTCHelper = new WebRTCHelper();
+
+  @override
+  void initState() {
+
+    _webRTCHelper.setWebsocketHelper(_webSocketHelper);
+
+    //webrtc
+    _webRTCHelper.initRenderer();
+    (() async {
+      RTCPeerConnection webRtcPeerConnection = await _webRTCHelper.createWebRtcPeerConnection();
+      _webRTCHelper.setPeerConnection(webRtcPeerConnection);
+      _createOffer();
+    })();
+    _webSocketHelper.init();
+
+    super.initState();
+  }
+
+  //webrtc
+  void _createOffer() async {
+    RTCSessionDescription description =
+      await _webRTCHelper.getRTCPeerConnection().createOffer({'offerToReceiveVideo': 1});
+    var sdp = description.sdp;
+    var session = parse(sdp!);
+    String jsonSession = json.encode(session);
+    _webSocketHelper.sendOfferToSignalingServer(jsonSession);
+
+    _webRTCHelper.setOffer(true);
+    _webRTCHelper.getRTCPeerConnection().setLocalDescription(description!);
+
+  }
+
+
+  @override
+  void dispose() {
+    //webrtc
+    _webRTCHelper.dispose();
+    //websocket
+    _webSocketHelper.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
+
     Color backgroundColor = Colors.lightGreen;
+    // _createOffer();
 
     return Scaffold(
         appBar: AppBar(
@@ -126,6 +180,14 @@ class _FindChatPartnerFormState extends State<FindChatPartnerForm> {
                         ),
                       ),
                     ),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      // _websocketChannel.sink.add("test data to send server");
+                      //FindChatMate.route();
+                    },
+                    child: Text('send Now'),
+                    style: ElevatedButton.styleFrom(foregroundColor: Colors.amber),
                   ),
                 ],
               ),

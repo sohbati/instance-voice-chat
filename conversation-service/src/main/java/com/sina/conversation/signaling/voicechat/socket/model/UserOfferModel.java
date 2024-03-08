@@ -1,16 +1,10 @@
-package com.sina.conversation.signaling.voicechat.model;
+package com.sina.conversation.signaling.voicechat.socket.model;
 
 
-import java.util.List;
-
-public record InstanceVoiceChatModel(
-        String userId,
+public record UserOfferModel(
         String userOfferSessionDescription,
-        String userAnswerSessionDescription,
-        List<String> candidates
-)
-{
-
+        String userId
+) {
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -19,7 +13,7 @@ public record InstanceVoiceChatModel(
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstanceVoiceChatModel other = (InstanceVoiceChatModel) obj;
+        UserOfferModel other = (UserOfferModel) obj;
         return userId == other.userId;
     }
 }

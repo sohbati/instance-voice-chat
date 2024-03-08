@@ -47,8 +47,6 @@
       <artifactId>quarkus-hibernate-validator</artifactId>
     </dependency>
 
-
-
     <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-junit5</artifactId>
@@ -79,11 +77,6 @@
       <artifactId>testcontainers</artifactId>
       <scope>test</scope>
     </dependency>
-    <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-      <version>1.18.30</version>
-    </dependency>
 
     <dependency>
       <groupId>io.quarkus</groupId>
@@ -94,6 +87,14 @@
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-smallrye-health</artifactId>
     </dependency>
+
+    <!-- https://mvnrepository.com/artifact/io.quarkus/quarkus-websockets -->
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-websockets</artifactId>
+      <version>3.8.1</version>
+    </dependency>
+
   </dependencies>
   <build>
     <plugins>
@@ -118,6 +119,9 @@
           </systemPropertyVariables>
         </configuration>
       </plugin>
+
+
+
     </plugins>
   </build>
   <profiles>
@@ -154,7 +158,7 @@
           <plugin>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-maven-plugin</artifactId>
-            <version>3.2.2.Final</version>
+<!--            <version>3.2.2.Final</version>-->
             <executions>
               <execution>
                 <goals>

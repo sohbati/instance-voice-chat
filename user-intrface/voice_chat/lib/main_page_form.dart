@@ -12,7 +12,7 @@ class MainPageForm extends StatefulWidget {
 class _MainPageFormState extends State<MainPageForm> {
   @override
   Widget build(BuildContext context) {
-    Color backgroundColor = Colors.lightGreen;
+    Color backgroundColor = Colors.grey;
 
 
     return Scaffold(

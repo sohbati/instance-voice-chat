@@ -20,12 +20,13 @@ public class ConstraintViolationExceptionHandler implements ExceptionMapper<Cons
         String errorCode = getErrorCodeKey(e.getMessage());
         String localizedErrorDescription = getLocalizedErrorDescription(errorCode, "");
 
-        ErrorRecord errorRecord = ErrorRecord.builder().errorCode(errorCode)
-                .message(localizedErrorDescription)
-                .httpStatus(Response.Status.BAD_REQUEST.getStatusCode())
-                .params(e.getMessage())
-                .dateTime(LocalDateTime.now()).build();
-
+        ErrorRecord errorRecord = new ErrorRecord(
+                (Response.Status.BAD_REQUEST.getStatusCode()),
+                (errorCode),
+                (localizedErrorDescription),
+                (LocalDateTime.now()),
+                "",
+                (e.getMessage()));
 
         return Response.status(Response.Status.BAD_REQUEST)
                 .entity(errorRecord)
