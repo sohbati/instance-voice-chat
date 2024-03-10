@@ -1,7 +1,10 @@
 package com.sina.conversation.signaling.voicechat.socket;
 
-import com.sina.conversation.signaling.voicechat.socket.model.UserOfferModel;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sina.conversation.signaling.voicechat.service.VoiceChatSignalingService;
+import com.sina.conversation.signaling.voicechat.socket.model.WebsocketData;
+import com.sina.conversation.signaling.voicechat.socket.model.WebsocketDataType;
 import io.quarkus.logging.Log;
 import jakarta.inject.Inject;
 import jakarta.websocket.*;
@@ -11,20 +14,16 @@ import jakarta.websocket.server.ServerEndpoint;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+
 @ServerEndpoint("/users/{userId}/voice-chat-signaling")
 public class VoiceChatResourceSocket {
 
     @Inject
+    ObjectMapper objectMapper;
+
+    @Inject
     private VoiceChatSignalingService voiceChatSignalingService;
     private Map<String, Session> sessions = new ConcurrentHashMap<>();
-
-//    @POST
-//    @Path("/add-user-offer-session-description")
-//    @Operation(summary = "Figma Code: api#????", description = "Add User offer to available list of users")
-//    public String addUserOfferSessionDescription(UserOfferModel model) {
-//        voiceChatSignalingService.setUserOfferSessionDescription(model.userId(), model.userOfferSessionDescription());
-//        return model.userId();
-//    }
 
     @OnOpen
     public void onOpen(Session session, @PathParam("userId") String userId) {
@@ -35,6 +34,23 @@ public class VoiceChatResourceSocket {
     @OnMessage
     public void onMessage(String message, @PathParam("userId") String userId) {
         Log.info(message);
+        messageDispatcher(message);
+
+    }
+
+    private void messageDispatcher(String message) {
+        WebsocketData value;
+        try {
+            value = objectMapper.readValue(message, WebsocketData.class);
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
+        }
+
+        if (value.type().equals(WebsocketDataType.OFFER)) {
+            voiceChatSignalingService.setUserOfferSessionDescription(value.userId(), value.value());
+        }else if (value.type().equals(WebsocketDataType.CANDIDATE)) {
+            voiceChatSignalingService.addCandidate(value.userId(), value.value());
+        }
     }
 
     @OnClose

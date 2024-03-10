@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:voice_chat/main_page_form.dart';
+import 'package:voice_chat/infrastructure/dependency_injection.dart';
 
 
-void main() {
+ void main() async {
+  await setupDependencies();
   runApp(const MyApp());
 }
 

@@ -16,8 +16,8 @@ class FindChatPartnerForm extends StatefulWidget {
 
 class _FindChatPartnerFormState extends State<FindChatPartnerForm> {
 
-  WebSocketHelper _webSocketHelper = new WebSocketHelper();
-  WebRTCHelper _webRTCHelper = new WebRTCHelper();
+  final WebSocketHelper _webSocketHelper = new WebSocketHelper();
+  final WebRTCHelper _webRTCHelper = new WebRTCHelper();
 
   @override
   void initState() {
@@ -27,29 +27,13 @@ class _FindChatPartnerFormState extends State<FindChatPartnerForm> {
     //webrtc
     _webRTCHelper.initRenderer();
     (() async {
-      RTCPeerConnection webRtcPeerConnection = await _webRTCHelper.createWebRtcPeerConnection();
-      _webRTCHelper.setPeerConnection(webRtcPeerConnection);
-      _createOffer();
+      await _webRTCHelper.createWebRtcPeerConnection();
+      _webRTCHelper.createOffer();
     })();
     _webSocketHelper.init();
 
     super.initState();
   }
-
-  //webrtc
-  void _createOffer() async {
-    RTCSessionDescription description =
-      await _webRTCHelper.getRTCPeerConnection().createOffer({'offerToReceiveVideo': 1});
-    var sdp = description.sdp;
-    var session = parse(sdp!);
-    String jsonSession = json.encode(session);
-    _webSocketHelper.sendOfferToSignalingServer(jsonSession);
-
-    _webRTCHelper.setOffer(true);
-    _webRTCHelper.getRTCPeerConnection().setLocalDescription(description!);
-
-  }
-
 
   @override
   void dispose() {
@@ -64,8 +48,6 @@ class _FindChatPartnerFormState extends State<FindChatPartnerForm> {
   Widget build(BuildContext context) {
 
     Color backgroundColor = Colors.lightGreen;
-    // _createOffer();
-
     return Scaffold(
         appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,

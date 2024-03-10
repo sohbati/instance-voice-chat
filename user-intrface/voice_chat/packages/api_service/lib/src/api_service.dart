@@ -26,11 +26,11 @@ class ApiService {
   /**
    * Send User OfferSDP to Signling Server
    */
-  Future<Map<String, dynamic>?> sendUserOfferToSignalingServer(String userId, String) async {
+  Future<Map<dynamic, dynamic>?> sendUserOfferToSignalingServer(String userId, String) async {
     try{
       final response = await http.post(Uri.parse('$_gatewayBaseUrl/users/$userId/offer-sdp'));
       if (response.statusCode == HTTP_200_OK) {
-        Map<String, dynamic> userInfo = json.decode(response.body);
+        Map<dynamic, dynamic> userInfo = json.decode(response.body);
         return userInfo;
       } else {
         return null;

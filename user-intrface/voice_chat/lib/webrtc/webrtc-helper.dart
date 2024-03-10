@@ -75,6 +75,7 @@ class WebRTCHelper {
       print('addStream:' + stream.id);
       _remoteRenderer.srcObject = stream;
     };
+    _peerConnection = pc;
     return pc;
   }
 
@@ -95,6 +96,20 @@ class WebRTCHelper {
     _localRenderer.srcObject = stream;
     _localRenderer.mirror = true;
     return stream;
+  }
+
+  //webrtc
+  void createOffer() async {
+    RTCSessionDescription description =
+    await getRTCPeerConnection().createOffer({'offerToReceiveVideo': 1});
+    var sdp = description.sdp;
+    var session = parse(sdp!);
+    String jsonSession = json.encode(session);
+    _webSocketHelper.sendOfferToSignalingServer(jsonSession);
+
+    setOffer(true);
+    getRTCPeerConnection().setLocalDescription(description!);
+
   }
 
   //webrtc

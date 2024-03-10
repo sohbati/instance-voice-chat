@@ -1,8 +1,9 @@
 package com.sina.conversation.signaling.voicechat.socket.model;
 
 
-public record UserOfferModel(
-        String userOfferSessionDescription,
+public record WebsocketData(
+        WebsocketDataType type,
+        String value,
         String userId
 ) {
     @Override
@@ -13,7 +14,7 @@ public record UserOfferModel(
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UserOfferModel other = (UserOfferModel) obj;
+        WebsocketData other = (WebsocketData) obj;
         return userId == other.userId;
     }
 }

@@ -1,12 +1,22 @@
+import 'dart:convert';
+
 class WebsocketData {
   WebsocketDataType type;
   String? value;
-
-  WebsocketData(this.type, this.value);
+  String userId;
+  WebsocketData(this.type, this.userId, this.value);
 
   @override
   String toString() {
-    return 'WebsocketData={type: "$type", value: "$value"}';
+    String typeStr = type.name;
+    String encodedJson = jsonEncode(value);
+    return '{"type": "$typeStr","userId": "$userId", "value": $encodedJson}';
   }
 }
-enum WebsocketDataType {OFFER, CANDIDATE}
+enum WebsocketDataType {
+  OFFER("OFFER"),
+  CANDIDATE("CANDIDATE");
+
+  final String name;
+  const WebsocketDataType(this.name);
+}

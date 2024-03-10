@@ -21,9 +21,16 @@ public class VoiceChatSignalingHelper {
         model.setUserAnswerSessionDescription(answerSDP);
     }
 
-    public void addCandidate(String userId, List<String> candidate) {
+    public void addCandidate(String userId, String candidate) {
         UserOfferAnswerAndCandidateModel model = instanceVoiceChatUserMap.get(userId);
-        model.setCandidates(candidate);
+        if(model == null) {
+            model = new UserOfferAnswerAndCandidateModel();
+            instanceVoiceChatUserMap.put(userId, model);
+        }
+        if (model.getCandidates() == null) {
+            model.setCandidates(new ArrayList<>());
+        }
+        model.getCandidates().add(candidate);
     }
 
     public UserOfferAnswerAndCandidateModel removeUser(String userId) {

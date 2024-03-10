@@ -12,4 +12,7 @@ public class VoiceChatSignalingService {
     public void setUserOfferSessionDescription(String userId, String offerSDP) {
         voiceChatSignalingHelper.addOfferSDP(userId, offerSDP);
     }
+    public void addCandidate(String userId, String candidate) {
+        voiceChatSignalingHelper.addCandidate(userId, candidate);
+    }
 }

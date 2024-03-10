@@ -26,7 +26,11 @@ dependencies:
   device_info_plus: ^9.1.1
   shared_preferences: ^2.0.12
   json_annotation: ^4.0.1
+  # this will be used in combination with injectable for DI
   get_it: ^7.2.0
+  # use it to generate the code for DI
+  injectable: ^1.5.3
+
   http: ^1.1.2
   flutter_webrtc: ^0.9.48+hotfix.1
   # The following adds the Cupertino Icons font to your application.
@@ -34,6 +38,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   provider: ^5.0.0
   web_socket_channel: ^2.4.4
+  uuid: ^3.0.7
 
 
 flutter_launcher_icons:
