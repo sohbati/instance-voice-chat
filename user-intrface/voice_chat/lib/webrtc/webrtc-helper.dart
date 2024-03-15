@@ -7,8 +7,11 @@ import 'package:voice_chat/websocket/websocket-helper.dart';
 
 class WebRTCHelper {
 
-
   late WebSocketHelper _webSocketHelper;
+
+  setWebSocketHelper(WebSocketHelper webSocketHelper) {
+    _webSocketHelper = webSocketHelper;
+  }
 
   //webrtc
   bool _offer = false;
@@ -18,10 +21,6 @@ class WebRTCHelper {
   final _localRenderer = new RTCVideoRenderer();
   final _remoteRenderer = new RTCVideoRenderer();
   final sdpController = TextEditingController();
-
-  void setWebsocketHelper(WebSocketHelper webSocketHelper) {
-    _webSocketHelper = webSocketHelper;
-  }
 
   //webrtc
   void initRenderer() async {
@@ -57,14 +56,13 @@ class WebRTCHelper {
     pc.addStream(_localStream);
     pc.onIceCandidate = (e) {
       if (e.candidate != null) {
-        //TODO send candidates, sdpmid, sdpMLineIndex to the server
         String candidate = (json.encode({
           'candidate': e.candidate.toString(),
           'sdpMid': e.sdpMid.toString(),
           'sdpMLineIndex': e.sdpMLineIndex,
         }));
         _webSocketHelper.sendCandidateToSignalingServer(candidate);
-        print(candidate);
+       // print(candidate);
       }
     };
 
@@ -113,25 +111,30 @@ class WebRTCHelper {
   }
 
   //webrtc
-  void _setRemoteDescription() async {
-    String jsonString = sdpController.text;
+  Future<void> setRemoteDescription(String remoteSessionDescription) async {
+    String jsonString = remoteSessionDescription.replaceFirst('\"setup\":\"actpass\"', '\"setup\":\"active\"');
     dynamic session = await jsonDecode('$jsonString');
     String sdp = write(session, null);
-    RTCSessionDescription description =
-    new RTCSessionDescription(sdp, _offer? 'answer' : 'offer');
+    // RTCSessionDescription description = new RTCSessionDescription(sdp, _offer? 'answer' : 'offer');
+    RTCSessionDescription description = new RTCSessionDescription(sdp, 'offer');
     print(description.toMap());
-    await _peerConnection.setRemoteDescription(description);
+    await _peerConnection.setRemoteDescription(description).then((_) {
+      print('Remote description set successfully');
+      print(_peerConnection.signalingState);
+      createAndSendTheAnswer();
+    });
   }
 
   //webrtc
-  void _createAnswer() async {
+  void createAndSendTheAnswer() async{
     RTCSessionDescription description =
-    await _peerConnection.createAnswer({'offerToReceiveVideo': 1});
+        await _peerConnection.createAnswer({'offerToReceiveVideo': 1});
     String sdp = description.sdp!;
     var session = parse(sdp);
-    print(json.encode(session));
+    var answerSdp = json.encode(session);
+    print(answerSdp);
     _peerConnection.setLocalDescription(description);
-
+    _webSocketHelper.sendAnswerSdp(answerSdp);
   }
   //webrtc
   void _setCandidate() async {
@@ -139,7 +142,7 @@ class WebRTCHelper {
     dynamic session = await jsonDecode(jsonString);
     print(session['candidate']);
     dynamic candidate =
-    new RTCIceCandidate(session['candidate'], session['sdpMid'], session['sdpMLineIndex']);
+      new RTCIceCandidate(session['candidate'], session['sdpMid'], session['sdpMLineIndex']);
     await _peerConnection.addCandidate(candidate);
 
   }

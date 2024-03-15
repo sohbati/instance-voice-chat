@@ -1,0 +1,6 @@
+quarkus:
+  http:
+    port: 8082
+  banner:
+    enabled: true
+    path: banner.txt

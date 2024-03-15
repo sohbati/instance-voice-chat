@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:voice_chat/main_page_form.dart';
-import 'package:voice_chat/infrastructure/dependency_injection.dart';
+import 'package:voice_chat/infrastructure/dependency-injection/dependency_injection.dart';
 
 
  void main() async {

@@ -1,11 +1,10 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
+import 'package:local_storage/local_storage.dart';
 import 'package:voice_chat/webrtc/webrtc-helper.dart';
 import 'package:voice_chat/websocket/websocket-helper.dart';
-
-import 'package:flutter_webrtc/flutter_webrtc.dart';
-import 'package:sdp_transform/sdp_transform.dart';
 
 class FindChatPartnerForm extends StatefulWidget {
   const FindChatPartnerForm({super.key});
@@ -16,13 +15,12 @@ class FindChatPartnerForm extends StatefulWidget {
 
 class _FindChatPartnerFormState extends State<FindChatPartnerForm> {
 
-  final WebSocketHelper _webSocketHelper = new WebSocketHelper();
-  final WebRTCHelper _webRTCHelper = new WebRTCHelper();
+  final WebSocketHelper _webSocketHelper = GetIt.instance<WebSocketHelper>();
+  final WebRTCHelper _webRTCHelper = GetIt.instance<WebRTCHelper>();
+  final LocalStorage _localStorage = GetIt.instance<LocalStorage>();
 
   @override
   void initState() {
-
-    _webRTCHelper.setWebsocketHelper(_webSocketHelper);
 
     //webrtc
     _webRTCHelper.initRenderer();
@@ -30,7 +28,7 @@ class _FindChatPartnerFormState extends State<FindChatPartnerForm> {
       await _webRTCHelper.createWebRtcPeerConnection();
       _webRTCHelper.createOffer();
     })();
-    _webSocketHelper.init();
+    _webSocketHelper.init(_localStorage.getLocalStoredUserInfo().userId);
 
     super.initState();
   }

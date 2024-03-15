@@ -24,11 +24,12 @@ class LocalStorage {
     }
     Map<String, dynamic> jsonMap = json.decode(userInfoStr!);
     UserInfoLocalStoreModel userInfo = UserInfoLocalStoreModel.fromJson(jsonMap);
+    print(userInfo.userId);
     return userInfo;
   }
 
   UserInfoLocalStoreModel createNewLocalUser() {
-    String uuid = new Uuid().v1();
+    String uuid = new Uuid().v4();
 
     UserInfoLocalStoreModel model = new UserInfoLocalStoreModel(userId: uuid);
     return model;
