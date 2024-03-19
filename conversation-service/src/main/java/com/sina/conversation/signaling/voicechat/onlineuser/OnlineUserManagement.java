@@ -1,20 +1,24 @@
 package com.sina.conversation.signaling.voicechat.onlineuser;
 
+import com.sina.conversation.infrastructure.pubsub.MessagePublisher;
 import com.sina.conversation.signaling.voicechat.model.UserPartneringStatus;
 import com.sina.conversation.signaling.voicechat.model.ReadyToVoiceChatUserModel;
 import io.quarkus.logging.Log;
 import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 @ApplicationScoped
 public class OnlineUserManagement {
-    private static Map<java.lang.String, ReadyToVoiceChatUserModel> onlineUsers = new HashMap();
+    private static Map<java.lang.String, ReadyToVoiceChatUserModel> onlineUsers = new HashMap<>();
+
+    @Inject
+    MessagePublisher messagePublisher;
 
     public List<ReadyToVoiceChatUserModel> getNotPartneredUsersList() {
         return onlineUsers.values().stream().filter(p ->
-                p.getPartneringStatus() == UserPartneringStatus.NOT_PARTNERED).collect(Collectors.toList());
+                p.getPartneringStatus() == UserPartneringStatus.NOT_PARTNERED).toList();
     }
     public void addOfferSDP(java.lang.String userId, java.lang.String offerSDP) {
         ReadyToVoiceChatUserModel user = onlineUsers.get(userId);
@@ -68,21 +72,50 @@ public class OnlineUserManagement {
     }
 
     public void removeUser(java.lang.String userId) {
-        Log.info(java.lang.String.format("User %s remove from online users!", userId));
+        Log.info(java.lang.String.format("User removed from online users: %s", userId));
         onlineUsers.remove(userId);
+        Log.info(String.format("Online users: %s", onlineUsers.size()));
     }
 
     public Set<java.lang.String> getAllOnlineUsers() {
         return onlineUsers.keySet();
     }
 
-    public void setAnswerSdp(java.lang.String userId, java.lang.String answerSdp) {
-        ReadyToVoiceChatUserModel user = onlineUsers.get(userId);
-        if (user == null) {
-            //Todo what if user does not exists in the list?
+    public List<ReadyToVoiceChatUserModel> getAllPartneredUsers() {
+        return onlineUsers.values().stream().filter(
+                userModel -> userModel.getPartneringStatus().equals(UserPartneringStatus.PARTNERED))
+                .toList();
+    }
+
+    public void setAnswerSdp(java.lang.String secondUserId, java.lang.String answerSdp) {
+        ReadyToVoiceChatUserModel secondUserModel = onlineUsers.get(secondUserId);
+        if (secondUserModel == null) {
+            //Todo what if secondUserModel does not exists in the list?
             return;
         }
-        user.setUserAnswerSessionDescriptionProtocol(answerSdp);
+        secondUserModel.setUserAnswerSessionDescriptionProtocol(answerSdp);
+        messagePublisher.sendAnswerSdpToFirstUser(secondUserId);
 
+        try {
+            //TODO  need to provide better solution to get both partners successful connection status
+            // be patient til the answer sdp settle in first partner
+            Thread.sleep(4000); // 2 second delay
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+        secondUserModel.setPartneringStauts(UserPartneringStatus.PARTNERED);
+        onlineUsers.get(secondUserModel.getPartnerUserId()).setPartneringStauts(UserPartneringStatus.PARTNERED);
+        //after this status the sendCandidate scheduler will pick up users and send the candidates to other partner
+        try {
+            //be patient til the answer sdp settle in first partner
+            Thread.sleep(3000); // 2 second delay
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+    }
+
+    public void changeUserStatusToConnected(String userId) {
+        ReadyToVoiceChatUserModel userModel = onlineUsers.get(userId);
+        userModel.setPartneringStauts(UserPartneringStatus.CONNECTED);
     }
 }

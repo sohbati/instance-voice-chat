@@ -16,6 +16,12 @@ class WebsocketData {
           return WebsocketDataType.CANDIDATE;
         case 'SET_OFFER_SDP_TO_SECOND_USER_REMOTE_DESCRIPTION':
           return WebsocketDataType.SET_OFFER_SDP_TO_SECOND_USER_REMOTE_DESCRIPTION;
+       case 'SEND_ANSWER_SDP_TO_FIRST_USER':
+          return WebsocketDataType.SEND_ANSWER_SDP_TO_FIRST_USER;
+       case 'SEND_CANDIDATE_TO_PARTNER_USER':
+          return WebsocketDataType.SEND_CANDIDATE_TO_PARTNER_USER;
+       case 'CONNECTED':
+          return WebsocketDataType.CONNECTED;
         default:
           return WebsocketDataType.NONE;
       }
@@ -40,7 +46,10 @@ enum WebsocketDataType {
   OFFER("OFFER"),
   CANDIDATE("CANDIDATE"),
   SET_OFFER_SDP_TO_SECOND_USER_REMOTE_DESCRIPTION("SET_OFFER_SDP_TO_SECOND_USER_REMOTE_DESCRIPTION"),
-  ANSWER_SDP("ANSWER_SDP");
+  ANSWER_SDP("ANSWER_SDP"),
+  SEND_ANSWER_SDP_TO_FIRST_USER("SEND_ANSWER_SDP_TO_FIRST_USER"),
+  SEND_CANDIDATE_TO_PARTNER_USER("SEND_CANDIDATE_TO_PARTNER_USER"),
+  CONNECTED("CONNECTED");
 
   final String name;
   const WebsocketDataType(this.name);

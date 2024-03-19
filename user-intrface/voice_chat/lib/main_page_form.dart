@@ -21,9 +21,9 @@ class _MainPageFormState extends State<MainPageForm> {
   @override
   void initState() {
     var userInfo = _localStorage.getLocalStoredUserInfo();
-    (() async {
-        _apiService.userInfo(userInfo.userId);
-    })();
+    // (() async {
+    //     _apiService.userInfo(userInfo.userId);
+    // })();
   }
   @override
   Widget build(BuildContext context) {

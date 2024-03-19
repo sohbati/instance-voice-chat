@@ -2,13 +2,13 @@ package com.sina.conversation.infrastructure.exception;
 
 import jakarta.ws.rs.core.Response;
 
-public enum ConversationErrorCodeEnum {
+public enum ErrorCodeEnum {
 
-    TEST_ALREADY_EXISTS(Response.Status.BAD_REQUEST);
+    JSON_DECODE_EXCEPTION(Response.Status.INTERNAL_SERVER_ERROR);
 
     public final Response.Status httpStatus;
 
-    private ConversationErrorCodeEnum(Response.Status status) {
+    private ErrorCodeEnum(Response.Status status) {
         this.httpStatus = status;
     }
 }

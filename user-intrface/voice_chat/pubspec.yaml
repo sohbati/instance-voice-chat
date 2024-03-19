@@ -39,6 +39,8 @@ dependencies:
   provider: ^5.0.0
   web_socket_channel: ^2.4.4
   uuid: ^3.0.7
+  intl: ^0.19.0
+
 
 
 flutter_launcher_icons:

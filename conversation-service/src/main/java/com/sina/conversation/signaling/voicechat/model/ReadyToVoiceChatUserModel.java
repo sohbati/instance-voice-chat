@@ -11,9 +11,10 @@ public class ReadyToVoiceChatUserModel {
     private java.lang.String userId;
     private java.lang.String userOfferSessionDescriptionProtocol;
     private java.lang.String userAnswerSessionDescriptionProtocol;
-    private List<java.lang.String> candidates = new ArrayList<>();
+    private List<IceCandidateModel> candidates = new ArrayList<>();
 
     private UserPartneringStatus partneringStatus = UserPartneringStatus.NOT_PARTNERED;
+    private String partnerUserId;
 
     public static ReadyToVoiceChatUserModel newWithSessionDescription(java.lang.String userId, java.lang.String sessionDescription) {
         ReadyToVoiceChatUserModel model = new ReadyToVoiceChatUserModel();
@@ -37,12 +38,15 @@ public class ReadyToVoiceChatUserModel {
         this.userOfferSessionDescriptionProtocol = userOfferSessionDescriptionProtocol;
     }
 
-    public List<java.lang.String> getCandidates() {
+    public List<IceCandidateModel> getCandidates() {
         return candidates;
     }
 
-    public void addCandidate(java.lang.String candidate) {
-        candidates.add(candidate);
+    public void addCandidate(java.lang.String iceCandidateStr) {
+        IceCandidateModel model = new IceCandidateModel();
+        model.setSentToPartner(false);
+        model.setIceCandidateJsonStr(iceCandidateStr);
+        candidates.add(model);
     }
 
     public UserPartneringStatus getPartneringStatus() {
@@ -59,6 +63,14 @@ public class ReadyToVoiceChatUserModel {
 
     public void setUserAnswerSessionDescriptionProtocol(java.lang.String userAnswerSessionDescriptionProtocol) {
         this.userAnswerSessionDescriptionProtocol = userAnswerSessionDescriptionProtocol;
+    }
+
+    public String getPartnerUserId() {
+        return partnerUserId;
+    }
+
+    public void setPartnerUserId(String partnerUserId) {
+        this.partnerUserId = partnerUserId;
     }
 
     @Override

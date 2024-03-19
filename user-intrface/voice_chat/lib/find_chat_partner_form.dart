@@ -6,6 +6,9 @@ import 'package:local_storage/local_storage.dart';
 import 'package:voice_chat/webrtc/webrtc-helper.dart';
 import 'package:voice_chat/websocket/websocket-helper.dart';
 
+import 'package:flutter_webrtc/flutter_webrtc.dart';
+// import 'package:sdp_transform/sdp_transform.dart';
+
 class FindChatPartnerForm extends StatefulWidget {
   const FindChatPartnerForm({super.key});
 
@@ -26,7 +29,7 @@ class _FindChatPartnerFormState extends State<FindChatPartnerForm> {
     _webRTCHelper.initRenderer();
     (() async {
       await _webRTCHelper.createWebRtcPeerConnection();
-      _webRTCHelper.createOffer();
+      _webRTCHelper.createOfferAndSendToSignalingServer();
     })();
     _webSocketHelper.init(_localStorage.getLocalStoredUserInfo().userId);
 
@@ -45,7 +48,7 @@ class _FindChatPartnerFormState extends State<FindChatPartnerForm> {
   @override
   Widget build(BuildContext context) {
 
-    Color backgroundColor = Colors.lightGreen;
+    Color backgroundColor = Colors.grey;
     return Scaffold(
         appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
@@ -107,7 +110,6 @@ class _FindChatPartnerFormState extends State<FindChatPartnerForm> {
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Center(
-                    // alignment: Alignment(-0.2, -0.1),
                     child: Container(
                       margin: EdgeInsets.all(0),
                       padding: EdgeInsets.all(0),
@@ -135,6 +137,46 @@ class _FindChatPartnerFormState extends State<FindChatPartnerForm> {
                           )),
                     ),
                   ),
+
+                  Container(
+                    margin: EdgeInsets.all(0),
+                    padding: EdgeInsets.all(0),
+                    width: 400,
+                    height: 400,
+                    decoration: BoxDecoration(
+                      color: Color(0x1f000000),
+                      shape: BoxShape.rectangle,
+                      borderRadius: BorderRadius.zero,
+                      border: Border.all(color: Color(0x4d9e9e9e), width: 1),
+                    ),
+                    child: Align(
+                      alignment: Alignment(-0.8, 0.0),
+                      child: SizedBox(
+                              height: 400,
+                              child: Row(
+                                children: [
+                                  Flexible(
+                                    child: Container(
+                                      key: Key('local'),
+                                      margin: EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 5.0),
+                                      decoration: BoxDecoration(color: Colors.black),
+                                      child: RTCVideoView(_webRTCHelper.getLocalRenderer()),
+                                    ),
+                                  ),
+                                  Flexible(
+                                    child: Container(
+                                      key: Key('remote'),
+                                      margin: EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 5.0),
+                                      decoration: BoxDecoration(color: Colors.black),
+                                      child: RTCVideoView(_webRTCHelper.getRemoteRenderer()),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                    ),
+                  ),
+
                   Container(
                     margin: EdgeInsets.all(0),
                     padding: EdgeInsets.all(0),
@@ -149,7 +191,7 @@ class _FindChatPartnerFormState extends State<FindChatPartnerForm> {
                     child: Align(
                       alignment: Alignment(-0.8, 0.0),
                       child: Text(
-                        "Hold on! we are looking for a partnet",
+                        "Hold on! we are looking for a Prtner",
                         textAlign: TextAlign.start,
                         overflow: TextOverflow.clip,
                         style: TextStyle(

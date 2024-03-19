@@ -5,6 +5,8 @@ import 'package:flutter_webrtc/flutter_webrtc.dart';
 import 'package:sdp_transform/sdp_transform.dart';
 import 'package:voice_chat/websocket/websocket-helper.dart';
 
+import '../infrastructure/log-helper.dart';
+
 class WebRTCHelper {
 
   late WebSocketHelper _webSocketHelper;
@@ -14,13 +16,19 @@ class WebRTCHelper {
   }
 
   //webrtc
-  bool _offer = false;
   late RTCPeerConnection _peerConnection;
   late MediaStream _localStream;
 
-  final _localRenderer = new RTCVideoRenderer();
-  final _remoteRenderer = new RTCVideoRenderer();
-  final sdpController = TextEditingController();
+  final _localRenderer = RTCVideoRenderer();
+  final _remoteRenderer = RTCVideoRenderer();
+
+  RTCVideoRenderer getLocalRenderer() {
+    return _localRenderer;
+  }
+
+  RTCVideoRenderer getRemoteRenderer() {
+    return _remoteRenderer;
+  }
 
   //webrtc
   void initRenderer() async {
@@ -30,10 +38,6 @@ class WebRTCHelper {
 
   RTCPeerConnection getRTCPeerConnection() {
     return _peerConnection;
-  }
-
-  void setOffer(bool offer) {
-    _offer = offer;
   }
 
   //webrtc
@@ -46,7 +50,7 @@ class WebRTCHelper {
     final Map<String, dynamic> offerSdpConstraints = {
       "mandatory": {
         "OfferToReceiveAudio": true,
-        "OfferToReceivevideo": true,
+        "OfferToReceiveVideo": true,
       },
       "optinal":[],
     };
@@ -62,15 +66,23 @@ class WebRTCHelper {
           'sdpMLineIndex': e.sdpMLineIndex,
         }));
         _webSocketHelper.sendCandidateToSignalingServer(candidate);
-       // print(candidate);
+       // LogHelper.log(candidate);
       }
     };
 
-    pc.onIceConnectionState = (e) {
-      print(e);
+    pc.onIceConnectionState = (state) {
+      if(state == RTCIceConnectionState.RTCIceConnectionStateConnected) {
+        LogHelper.log("CONNECTED **************************");
+        _webSocketHelper.sendConnected();
+      }
+
+      if(state == RTCIceConnectionState.RTCIceConnectionStateNew) {
+        LogHelper.log("NEW ****************************");
+      }
+      LogHelper.log(state.toString());
     };
     pc.onAddStream = (stream) {
-      print('addStream:' + stream.id);
+      LogHelper.log('addStream:' + stream.id);
       _remoteRenderer.srcObject = stream;
     };
     _peerConnection = pc;
@@ -84,7 +96,7 @@ class WebRTCHelper {
   //webrtc
   _getUserMedia() async {
     final Map<String, dynamic> mediaConstraints = {
-      'audio': false,
+      'audio': true,
       'video': {
         'facingMode': 'user'
       }
@@ -97,53 +109,73 @@ class WebRTCHelper {
   }
 
   //webrtc
-  void createOffer() async {
+  void createOfferAndSendToSignalingServer() async {
     RTCSessionDescription description =
-    await getRTCPeerConnection().createOffer({'offerToReceiveVideo': 1});
+      await getRTCPeerConnection().createOffer({'offerToReceiveVideo': 1});
     var sdp = description.sdp;
     var session = parse(sdp!);
     String jsonSession = json.encode(session);
     _webSocketHelper.sendOfferToSignalingServer(jsonSession);
+    LogHelper.log('Offer sdp sent to signaling server');
+    _peerConnection.getIceConnectionState().then((value) => LogHelper.log("RTC ICE STATE :$value"));
 
-    setOffer(true);
     getRTCPeerConnection().setLocalDescription(description!);
-
   }
 
   //webrtc
-  Future<void> setRemoteDescription(String remoteSessionDescription) async {
+  Future<void> setOfferRemoteDescription(String remoteSessionDescription) async {
     String jsonString = remoteSessionDescription.replaceFirst('\"setup\":\"actpass\"', '\"setup\":\"active\"');
     dynamic session = await jsonDecode('$jsonString');
     String sdp = write(session, null);
-    // RTCSessionDescription description = new RTCSessionDescription(sdp, _offer? 'answer' : 'offer');
     RTCSessionDescription description = new RTCSessionDescription(sdp, 'offer');
-    print(description.toMap());
     await _peerConnection.setRemoteDescription(description).then((_) {
-      print('Remote description set successfully');
-      print(_peerConnection.signalingState);
+      LogHelper.log('Offer set in  Remote description successfully');
+      _peerConnection.getIceConnectionState().then((value) => LogHelper.log("RTC ICE STATE :$value"));
+
       createAndSendTheAnswer();
     });
   }
 
+  Future<void> setAnswerRemoteDescription(String remoteSessionDescription) async {
+    // String jsonString = remoteSessionDescription.replaceFirst('\"setup\":\"actpass\"', '\"setup\":\"active\"');
+    dynamic session = await jsonDecode('$remoteSessionDescription');
+    String sdp = write(session, null);
+    RTCSessionDescription description = new RTCSessionDescription(sdp, 'answer');
+    await _peerConnection.setRemoteDescription(description).then((_) {
+      LogHelper.log('Answer Remote description set successfully');
+      _peerConnection.getIceConnectionState().then((value) => LogHelper.log("RTC ICE STATE :$value"));
+    });
+  }
+
+
   //webrtc
   void createAndSendTheAnswer() async{
-    RTCSessionDescription description =
-        await _peerConnection.createAnswer({'offerToReceiveVideo': 1});
+    RTCSessionDescription description = await _peerConnection.createAnswer({'offerToReceiveVideo': 1});
     String sdp = description.sdp!;
     var session = parse(sdp);
     var answerSdp = json.encode(session);
-    print(answerSdp);
     _peerConnection.setLocalDescription(description);
     _webSocketHelper.sendAnswerSdp(answerSdp);
+    LogHelper.log("Answer sdp sent");
+    _peerConnection.getIceConnectionState().then((value) => LogHelper.log("RTC ICE STATE :$value"));
+
   }
+
   //webrtc
-  void _setCandidate() async {
-    String jsonString = sdpController.text;
-    dynamic session = await jsonDecode(jsonString);
-    print(session['candidate']);
+  void setCandidate(String candidateJsonString) async {
+    dynamic session = await jsonDecode(candidateJsonString);
+    LogHelper.log(session['candidate']);
     dynamic candidate =
       new RTCIceCandidate(session['candidate'], session['sdpMid'], session['sdpMLineIndex']);
-    await _peerConnection.addCandidate(candidate);
+
+    LogHelper.log(_peerConnection.getIceConnectionState().toString());
+    _peerConnection.getIceConnectionState().then((value) => print(value));
+    await _peerConnection.addCandidate(candidate).then((_) {
+        LogHelper.log('Candidate set successfully');
+    }).onError((error, stackTrace) {
+       print(error);
+       print(stackTrace);
+    });
 
   }
 
@@ -151,8 +183,6 @@ class WebRTCHelper {
     //webrtc
     _localRenderer.dispose();
     _remoteRenderer.dispose();
-    sdpController.dispose();
 
   }
-
 }

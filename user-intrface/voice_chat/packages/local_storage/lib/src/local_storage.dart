@@ -24,7 +24,7 @@ class LocalStorage {
     }
     Map<String, dynamic> jsonMap = json.decode(userInfoStr!);
     UserInfoLocalStoreModel userInfo = UserInfoLocalStoreModel.fromJson(jsonMap);
-    print(userInfo.userId);
+    // LogHelper.log(userInfo.userId);
     return userInfo;
   }
 
