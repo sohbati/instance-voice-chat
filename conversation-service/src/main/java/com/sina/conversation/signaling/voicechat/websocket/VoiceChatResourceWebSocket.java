@@ -51,8 +51,6 @@ public class VoiceChatResourceWebSocket {
         Log.info("User " + userId + " left on error: " + throwable);
     }
 
-
-
     public void sendToUser(PubSubMessage message) {
         String jsonString = "";
         try {

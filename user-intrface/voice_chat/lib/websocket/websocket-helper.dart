@@ -20,7 +20,7 @@ class WebSocketHelper {
 
   void init(String userId) {
     //websocket
-    final wsUrl = Uri.parse('ws://localhost:8082/users/$userId/voice-chat-signaling');
+    final wsUrl = Uri.parse('ws://194.5.175.224:8082/users/$userId/voice-chat-signaling');
     _websocketChannel = WebSocketChannel.connect(wsUrl);
     webSocketListener();
   }

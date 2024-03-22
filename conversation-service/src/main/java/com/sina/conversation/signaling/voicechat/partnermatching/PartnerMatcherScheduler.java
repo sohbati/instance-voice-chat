@@ -10,6 +10,7 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import io.quarkus.scheduler.Scheduled;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -26,7 +27,7 @@ public class PartnerMatcherScheduler {
 
     @Scheduled(every = "5s")
     public void partnerMatchFinder() {
-        List<ReadyToVoiceChatUserModel> list = onlineUserManagement.getNotPartneredUsersList();
+        List<ReadyToVoiceChatUserModel> list = new ArrayList<>(onlineUserManagement.getNotPartneredUsersList());
         if (!list.isEmpty())
            Log.info(java.lang.String.format("Ready to connect users = %s", list.size()));
         while (!list.isEmpty()) {

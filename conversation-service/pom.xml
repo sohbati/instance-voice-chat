@@ -179,14 +179,11 @@
           <plugin>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-maven-plugin</artifactId>
-<!--            <version>3.2.2.Final</version>-->
-            <executions>
-              <execution>
-                <goals>
-                  <goal>build</goal>
-                </goals>
-              </execution>
-            </executions>
+            <version>${quarkus.platform.version}</version>
+            <extensions>true</extensions>
+            <configuration>
+              <uberJar>true</uberJar>
+            </configuration>
           </plugin>
         </plugins>
       </build>
