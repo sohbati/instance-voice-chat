@@ -4,6 +4,7 @@ import com.sina.conversation.infrastructure.pubsub.MessagePublisher;
 import com.sina.conversation.signaling.voicechat.model.UserPartneringStatus;
 import com.sina.conversation.signaling.voicechat.model.ReadyToVoiceChatUserModel;
 import io.quarkus.logging.Log;
+import io.vertx.core.Vertx;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 
@@ -15,6 +16,9 @@ public class OnlineUserManagement {
 
     @Inject
     MessagePublisher messagePublisher;
+
+    @Inject
+    Vertx vertx;
 
     public List<ReadyToVoiceChatUserModel> getNotPartneredUsersList() {
         return onlineUsers.values().stream().filter(p ->
@@ -96,22 +100,11 @@ public class OnlineUserManagement {
         secondUserModel.setUserAnswerSessionDescriptionProtocol(answerSdp);
         messagePublisher.sendAnswerSdpToFirstUser(secondUserId);
 
-        try {
-            //TODO  need to provide better solution to get both partners successful connection status
-            // be patient til the answer sdp settle in first partner
-            Thread.sleep(4000); // 2 second delay
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
-        secondUserModel.setPartneringStauts(UserPartneringStatus.PARTNERED);
-        onlineUsers.get(secondUserModel.getPartnerUserId()).setPartneringStauts(UserPartneringStatus.PARTNERED);
-        //after this status the sendCandidate scheduler will pick up users and send the candidates to other partner
-        try {
-            //be patient til the answer sdp settle in first partner
-            Thread.sleep(3000); // 2 second delay
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
+        vertx.setTimer(4000, t -> {
+            secondUserModel.setPartneringStauts(UserPartneringStatus.PARTNERED);
+            onlineUsers.get(secondUserModel.getPartnerUserId()).setPartneringStauts(UserPartneringStatus.PARTNERED);
+
+        });
     }
 
     public void changeUserStatusToConnected(String userId) {
