@@ -7,6 +7,10 @@ services:
     image: instance-voice-chat_gateway
     ports:
       - "127.0.0.1:8888:8888"
+    deploy:
+      resources:
+        limits:
+          memory: 200M
   embeded-iam:
     build:
       context: ./embedded-iam
@@ -14,6 +18,10 @@ services:
     image: embeded-iam
     ports:
       - "127.0.0.1:8080:8080"
+    deploy:
+      resources:
+        limits:
+          memory: 400M
   user-management:
     build:
       context: ./user-management-service
@@ -21,6 +29,10 @@ services:
     image: user-management-service
     ports:
       - "127.0.0.1:8081:8081"
+    deploy:
+      resources:
+        limits:
+          memory: 200M
   conversation-service:
     build:
       context: ./conversation-service
@@ -28,3 +40,7 @@ services:
     image: conversation-service
     ports:
       - "127.0.0.1:8082:8082"
+    deploy:
+      resources:
+        limits:
+          memory: 200M
