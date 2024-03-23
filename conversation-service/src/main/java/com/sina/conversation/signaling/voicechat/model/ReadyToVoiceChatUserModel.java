@@ -87,7 +87,7 @@ public class ReadyToVoiceChatUserModel {
             return false;
         }
         ReadyToVoiceChatUserModel other = (ReadyToVoiceChatUserModel) obj;
-        return userId == other.userId;
+        return Objects.equals(userId, other.userId);
     }
 
     @Override
