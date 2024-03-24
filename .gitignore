@@ -20,10 +20,8 @@ user-intrface/flutter-mobile/instance-voice-chat/.flutter-plugins/
 user-intrface/flutter-mobile/instance-voice-chat/.flutter-plugins-dependencies
 
 embedded-iam/target/
-embedded-iam/.idea/sonarlint/issuestore/8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
-embedded-iam/.idea/sonarlint/issuestore/index.pb
-embedded-iam/.idea/sonarlint/securityhotspotstore/8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
-embedded-iam/.idea/sonarlint/securityhotspotstore/index.pb
+embedded-iam/.idea/
+
 /user-intrface/.dart_tool
 /user-intrface/.idea
 /user-intrface/flutter-mobile/.idea
