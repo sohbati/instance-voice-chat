@@ -1,10 +1,28 @@
-hystrix.command.fallbackcmd.execution.isolation.thread.timeoutInMilliseconds: 2000
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000
 spring:
   application:
     name: api-gateway
   banner:
     location: classpath:banner.txt
-
+  cloud:
+    gateway:
+      routes:
+        - id: users_route
+          uri: http://localhost:8080
+          predicates:
+            - Path=/users/**
+        - id: voice_chat_route
+          uri: http://localhost:8082
+          predicates:
+            - Path=/ws/voice-chat-signaling/**
+          filters:
+            - RewritePath=/ws/voice-chat-signaling/(?<remaining>.*), /${remaining}
 server:
   port: 8888
 
