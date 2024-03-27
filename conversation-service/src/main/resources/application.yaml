@@ -3,7 +3,10 @@ quarkus:
     port: 8082
   log:
     file:
-      path: conversation-service45e.log
+      path: logs/app.log
+      level: ALL
+      enable: true
+
   banner:
     enabled: true
     path: banner.txt

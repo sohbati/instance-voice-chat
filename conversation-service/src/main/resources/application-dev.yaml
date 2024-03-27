@@ -2,7 +2,5 @@ quarkus:
   mongodb:
     connection-string: mongodb://admin:admin@localhost:27017/conversation?retryWrites=true&w=majority
     # mandatory if you don't specify the name of the database using @MongoEntity
-    quarkus:
-      mongodb:
-        database: persons
+    database: persons
 application:
