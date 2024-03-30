@@ -23,12 +23,12 @@ spring:
             - Path=/ws/voice-chat-signaling/**
           filters:
             - RewritePath=/ws/voice-chat-signaling/(?<remaining>.*), /$\{remaining}
-        - id: conversation-service
-          uri: http://localhost:8082
-          predicates:
-            - Path=/conversation-service/q/**
-          filters:
-            - RewritePath=/conversation-service/q/(?<remaining>.*), /$\{remaining}
+#        - id: conversation-service
+#          uri: http://localhost:8082
+#          predicates:
+#            - Path=/conversation-service/q/**
+#          filters:
+#            - RewritePath=/conversation-service/q/(?<remaining>.*), /$\{remaining}
 
 server:
   port: 8888
