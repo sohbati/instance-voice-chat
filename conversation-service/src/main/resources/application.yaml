@@ -3,7 +3,7 @@ quarkus:
     port: 8082
   log:
     file:
-      path: logs/app.log
+      path: "${LOG_FILE_LOCATION: logs/app.log}"
       level: ALL
       enable: true
 
