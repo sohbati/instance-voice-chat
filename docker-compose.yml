@@ -39,7 +39,7 @@ services:
       dockerfile: Dockerfile
     image: conversation-service
     ports:
-      - "localhost:8082:8082"
+      - "8082:8082"
     deploy:
       resources:
         limits:
