@@ -13,16 +13,17 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: users_route
-          uri: http://localhost:8080
-          predicates:
-            - Path=/users/**
+#        - id: users_route
+#          uri: http://localhost:8080
+#          predicates:
+#            - Path=/users/**
         - id: voice_chat_route
           uri: http://localhost:8082
           predicates:
             - Path=/ws/voice-chat-signaling/**
           filters:
             - RewritePath=/ws/voice-chat-signaling/(?<remaining>.*), /$\{remaining}
+
 #        - id: conversation-service
 #          uri: http://localhost:8082
 #          predicates:
