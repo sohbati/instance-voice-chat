@@ -14,7 +14,7 @@ public class GatewayConfig {
                 .route("voice_chat_route", r -> r
                         .path("/ws/voice-chat-signaling/**")
                         .filters(f -> f.rewritePath("/ws/voice-chat-signaling/(?<remaining>.*)", "/${remaining}"))
-                        .uri("ws://conversation-service:8082")
+                        .uri("ws://localhost:8082")
                 )
                 .build();
     }
