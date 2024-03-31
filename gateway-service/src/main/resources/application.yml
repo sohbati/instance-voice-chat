@@ -10,27 +10,15 @@ spring:
     name: api-gateway
   banner:
     location: classpath:banner.txt
-  cloud:
-    gateway:
-      routes:
-#        - id: users_route
-#          uri: http://localhost:8080
-#          predicates:
-#            - Path=/users/**
-        - id: voice_chat_route
-          uri: http://localhost:8082
-          predicates:
-            - Path=/ws/voice-chat-signaling/**
-          filters:
-            - RewritePath=/ws/voice-chat-signaling/(?<remaining>.*), /$\{remaining}
-
-#        - id: conversation-service
+#  cloud:
+#    gateway:
+#      routes:
+#        - id: voice_chat_route
 #          uri: http://localhost:8082
 #          predicates:
-#            - Path=/conversation-service/q/**
+#            - Path=/ws/voice-chat-signaling/**
 #          filters:
-#            - RewritePath=/conversation-service/q/(?<remaining>.*), /$\{remaining}
-
+#            - RewritePath=/ws/voice-chat-signaling/(?<remaining>.*), /$\{remaining}
 server:
   port: 8888
 
