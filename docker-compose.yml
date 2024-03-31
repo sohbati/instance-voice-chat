@@ -1,10 +1,15 @@
 version: '3'
+networks:
+  mynetwork:
+    driver: bridge
 services:
   gateway:
     build:
       context: ./gateway-service
       dockerfile: Dockerfile
     image: instance-voice-chat_gateway
+    networks:
+      - mynetwork
     ports:
       - "0.0.0.0:8888:8888"
     deploy:
@@ -16,6 +21,8 @@ services:
       context: ./embedded-iam
       dockerfile: Dockerfile
     image: embeded-iam
+    networks:
+      - mynetwork
     ports:
       - "127.0.0.1:8080:8080"
     deploy:
@@ -27,6 +34,8 @@ services:
       context: ./user-management-service
       dockerfile: Dockerfile
     image: user-management-service
+    networks:
+      - mynetwork
     ports:
       - "127.0.0.1:8081:8081"
     deploy:
@@ -38,6 +47,8 @@ services:
       context: ./conversation-service
       dockerfile: Dockerfile
     image: conversation-service
+    networks:
+      - mynetwork
     ports:
       - "0.0.0.0:8082:8082"
     deploy:
