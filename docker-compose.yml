@@ -4,7 +4,7 @@ services:
     build:
       context: ./gateway-service
       dockerfile: Dockerfile
-    image: instance-voice-chat_gateway
+    image: instance-voice-chat_gateway:latest
     ports:
       - "0.0.0.0:8888:8888"
     deploy:
@@ -15,7 +15,7 @@ services:
     build:
       context: ./embedded-iam
       dockerfile: Dockerfile
-    image: embeded-iam
+    image: embeded-iam:latest
     ports:
       - "127.0.0.1:8080:8080"
     deploy:
@@ -26,7 +26,7 @@ services:
     build:
       context: ./user-management-service
       dockerfile: Dockerfile
-    image: user-management-service
+    image: user-management-service:latest
     ports:
       - "127.0.0.1:8081:8081"
     deploy:
@@ -37,7 +37,7 @@ services:
     build:
       context: ./conversation-service
       dockerfile: Dockerfile
-    image: conversation-service
+    image: conversation-service:latest
     ports:
       - "0.0.0.0:8082:8082"
     deploy:
