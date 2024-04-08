@@ -35,6 +35,9 @@ public class VoiceChatResourceWebSocket {
         if(Log.isDebugEnabled()) {
             Log.debug(String.format("Received Message: %s", message));
         }
+        if(Log.isInfoEnabled()) {
+            Log.info(String.format("User message received in server : %s", userId));
+        }
         messagePublisher.websocketMessageDispatcher(message);
     }
 
