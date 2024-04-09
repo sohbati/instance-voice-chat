@@ -1,8 +1,8 @@
 import 'dart:convert';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter_webrtc/flutter_webrtc.dart';
 import 'package:sdp_transform/sdp_transform.dart';
+// import 'package:voice_chat/infrastructure/PermissionRequest.dart';
 import 'package:voice_chat/websocket/websocket-helper.dart';
 
 import '../infrastructure/log-helper.dart';
@@ -19,8 +19,8 @@ class WebRTCHelper {
   late RTCPeerConnection _peerConnection;
   late MediaStream _localStream;
 
-  final _localRenderer = RTCVideoRenderer();
-  final _remoteRenderer = RTCVideoRenderer();
+  late final RTCVideoRenderer _localRenderer;
+  late final RTCVideoRenderer _remoteRenderer;
 
   RTCVideoRenderer getLocalRenderer() {
     return _localRenderer;
@@ -32,6 +32,8 @@ class WebRTCHelper {
 
   //webrtc
   void initRenderer() async {
+    _localRenderer = RTCVideoRenderer();
+    _remoteRenderer = RTCVideoRenderer();
     await _localRenderer.initialize();
     await _remoteRenderer.initialize();
   }
@@ -57,7 +59,11 @@ class WebRTCHelper {
     _localStream = await _getUserMedia();
     RTCPeerConnection pc = await createPeerConnection(
         configuration, offerSdpConstraints);
-    pc.addStream(_localStream);
+    // pc.addStream(_localStream);
+    final videoTrack = _localStream.getVideoTracks().first;
+    pc.addTrack(videoTrack, _localStream);
+
+
     pc.onIceCandidate = (e) {
       if (e.candidate != null) {
         String candidate = (json.encode({
@@ -81,9 +87,20 @@ class WebRTCHelper {
       }
       LogHelper.log(state.toString());
     };
-    pc.onAddStream = (stream) {
-      LogHelper.log('addStream:' + stream.id);
-      _remoteRenderer.srcObject = stream;
+
+
+    // pc.onAddStream = (stream) {
+    //   LogHelper.log('addStream:' + stream.id);
+    //   _remoteRenderer.srcObject = stream;
+    // };
+    pc.onTrack = (event) {
+      _remoteRenderer.srcObject = event.streams.first;
+      // if (event.track.kind == 'video') {
+      //   // Handle incoming video track
+      //   // You can render the video track using a VideoRendererWidget or any other method
+      // } else if (event.track.kind == 'audio') {
+      //   // Handle incoming audio track
+      // }
     };
     _peerConnection = pc;
     return pc;
@@ -101,10 +118,11 @@ class WebRTCHelper {
         'facingMode': 'user'
       }
     };
+    // await requestPermissions();
     MediaStream stream = await navigator.mediaDevices.getUserMedia(mediaConstraints);
 
     _localRenderer.srcObject = stream;
-    _localRenderer.mirror = true;
+    // _localRenderer.mirror = true;
     return stream;
   }
 
@@ -183,6 +201,7 @@ class WebRTCHelper {
     //webrtc
     _localRenderer.dispose();
     _remoteRenderer.dispose();
+    _peerConnection.close();
 
   }
 }

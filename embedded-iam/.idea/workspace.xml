@@ -5,290 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1a7709e-ca6f-47b7-875c-71fe4f8ebb9a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/banner.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/META-INF/keycloak-server.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/META-INF/services/org.keycloak.common.util.ResteasyProvider" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/META-INF/services/org.keycloak.config.ConfigProviderFactory" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/META-INF/services/org.keycloak.platform.PlatformProvider" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/META-INF/spring-configuration-metadata.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/application.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/banner.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/sina-realm.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/embedded-iam-0.0.1.jar.original" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.sina.iam.embeddedIamApplicationTests.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/surefire-reports/com.sina.iam.embeddedIamApplicationTests.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../gateway-service/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../gateway-service/src/main/resources/banner.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/Download Service/Files/Unconfirmed 552712.crdownload" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/Download Service/Files/Unconfirmed 655383.crdownload" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/Service Worker/ScriptCache/0d3086d7cda635d4_0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/Service Worker/ScriptCache/23469ac906fcc612_0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/Service Worker/ScriptCache/3ef2ebed6c12e1f6_0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/Service Worker/ScriptCache/45c2f2fcb9072b47_0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/Service Worker/ScriptCache/6fc459ba53cb570a_0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/Service Worker/ScriptCache/83efbe48d0097388_0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/Service Worker/ScriptCache/afe1e5264eea33bc_0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/Service Worker/ScriptCache/ce2a2172c04b134d_0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/Service Worker/ScriptCache/f13a76bbf6c7f0b3_0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/Service Worker/ScriptCache/f76ccbbbd72a0391_0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/Sessions/Session_13349287684008215" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/Sessions/Session_13349334716281051" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/Sessions/Session_13349335553772656" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/Sessions/Session_13349335622097975" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/Sessions/Session_13349335806590566" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/Sessions/Session_13349366242416256" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/Sessions/Session_13349367075413785" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/Sessions/Session_13349367334677211" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/Sessions/Session_13349368548162034" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/Sessions/Session_13349368704280137" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/Sessions/Session_13349369596593030" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/Sessions/Session_13349370582283484" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/Sessions/Tabs_13349287684634159" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/Sessions/Tabs_13349334717520082" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/Sessions/Tabs_13349335554184926" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/Sessions/Tabs_13349335622499873" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/Sessions/Tabs_13349335807011486" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/Sessions/Tabs_13349366242881843" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/Sessions/Tabs_13349367075869880" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/Sessions/Tabs_13349367987551739" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/Sessions/Tabs_13349369597119823" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/Sessions/Tabs_13349370582716856" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/01d39e49-43bf-469e-8209-c1bd912ef4f9/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/01d39e49-43bf-469e-8209-c1bd912ef4f9/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/04fbd929-550d-4803-9aef-487231c937a4/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/04fbd929-550d-4803-9aef-487231c937a4/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/04fbd929-550d-4803-9aef-487231c937a4/visual_model_desktop.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/0bd29dad-2f5d-4e8e-a84c-d58ec0bee0b4/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/0bd29dad-2f5d-4e8e-a84c-d58ec0bee0b4/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/0ce33c12-dadf-4c72-8057-3fca4348cd37/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/0ce33c12-dadf-4c72-8057-3fca4348cd37/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/13a5d298-712d-470a-a53a-d73e1484052b/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/13a5d298-712d-470a-a53a-d73e1484052b/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/14212c3e-e5d2-44b0-8a97-9ef75e717f07/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/14212c3e-e5d2-44b0-8a97-9ef75e717f07/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/16881b7f-91ef-408a-8a15-d70326a8af7c/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/16881b7f-91ef-408a-8a15-d70326a8af7c/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/24cb7cac-3356-4f09-b0ab-8520834e92db/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/24cb7cac-3356-4f09-b0ab-8520834e92db/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/274c4d63-bce9-46ee-b3a4-5690262a304d/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/274c4d63-bce9-46ee-b3a4-5690262a304d/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/274c4d63-bce9-46ee-b3a4-5690262a304d/visual_model_desktop.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/2c79424c-5452-4d74-a50e-5fae3af106ee/global-entities_metadata" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/2c79424c-5452-4d74-a50e-5fae3af106ee/global-entities_names" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/2c79424c-5452-4d74-a50e-5fae3af106ee/global-entities_names_filter" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/2c79424c-5452-4d74-a50e-5fae3af106ee/global-entities_prefixes_filter" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/2c79424c-5452-4d74-a50e-5fae3af106ee/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/2c79424c-5452-4d74-a50e-5fae3af106ee/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/2c79424c-5452-4d74-a50e-5fae3af106ee/model_metadata.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/2c79424c-5452-4d74-a50e-5fae3af106ee/word_embeddings" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/30ff735b-91af-47b5-aca1-78b17d035d29/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/30ff735b-91af-47b5-aca1-78b17d035d29/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/32036eb1-c8a4-4fe4-917a-2092fe80a751/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/32036eb1-c8a4-4fe4-917a-2092fe80a751/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/34043f8c-848a-44a5-b4a3-13b98d844e72/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/34043f8c-848a-44a5-b4a3-13b98d844e72/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/34986887-d005-4b17-9362-c46dbd713aef/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/34986887-d005-4b17-9362-c46dbd713aef/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/34986887-d005-4b17-9362-c46dbd713aef/visual_model_desktop.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/45b8cf85-3487-40a0-bf64-bce1d655445a/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/45b8cf85-3487-40a0-bf64-bce1d655445a/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/45b8cf85-3487-40a0-bf64-bce1d655445a/visual_model_desktop.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/4647ee5f-9c8e-47b7-aa43-32bd1940e9f6/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/4647ee5f-9c8e-47b7-aa43-32bd1940e9f6/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/46d65a2d-3bda-47dd-b1b0-df3098693fb8/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/46d65a2d-3bda-47dd-b1b0-df3098693fb8/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/4977d699-844f-4561-8a32-33204a038163/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/4977d699-844f-4561-8a32-33204a038163/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/4d64aa6f-0dd6-48de-934d-2f51402dab16/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/4d64aa6f-0dd6-48de-934d-2f51402dab16/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/4e8cda22-5385-4d83-8d64-24b28b71dfa0/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/4e8cda22-5385-4d83-8d64-24b28b71dfa0/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/59562393-3484-4f97-95f0-f83b2a8d3faa/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/59562393-3484-4f97-95f0-f83b2a8d3faa/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/5adc38e5-c728-44f3-affa-910c6c83a759/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/5adc38e5-c728-44f3-affa-910c6c83a759/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/5adcaa54-03ed-4bb8-8d07-7ae779832302/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/5adcaa54-03ed-4bb8-8d07-7ae779832302/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/6299c64e-8e59-4008-8551-d3e04c67fa27/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/6299c64e-8e59-4008-8551-d3e04c67fa27/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/6500b123-f92a-49ff-bd6e-e0c855b321ee/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/6500b123-f92a-49ff-bd6e-e0c855b321ee/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/6500b123-f92a-49ff-bd6e-e0c855b321ee/visual_model_desktop.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/68403350-e034-4b43-b476-5bc75b79a491/global-entities_metadata" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/68403350-e034-4b43-b476-5bc75b79a491/global-entities_names" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/68403350-e034-4b43-b476-5bc75b79a491/global-entities_names_filter" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/68403350-e034-4b43-b476-5bc75b79a491/global-entities_prefixes_filter" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/68403350-e034-4b43-b476-5bc75b79a491/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/68403350-e034-4b43-b476-5bc75b79a491/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/68403350-e034-4b43-b476-5bc75b79a491/model_metadata.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/68403350-e034-4b43-b476-5bc75b79a491/word_embeddings" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/699fd062-72fa-4316-ab06-e71d63bf7964/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/699fd062-72fa-4316-ab06-e71d63bf7964/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/6b39b5c7-9e73-45b7-9a4a-0c01bc743bec/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/6b39b5c7-9e73-45b7-9a4a-0c01bc743bec/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/755b474e-14d5-4a65-b1bf-49ca0bf75810/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/755b474e-14d5-4a65-b1bf-49ca0bf75810/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/7a00168e-4024-47d6-9002-8018c3c4b647/global-entities_metadata" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/7a00168e-4024-47d6-9002-8018c3c4b647/global-entities_names" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/7a00168e-4024-47d6-9002-8018c3c4b647/global-entities_names_filter" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/7a00168e-4024-47d6-9002-8018c3c4b647/global-entities_prefixes_filter" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/7a00168e-4024-47d6-9002-8018c3c4b647/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/7a00168e-4024-47d6-9002-8018c3c4b647/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/7a00168e-4024-47d6-9002-8018c3c4b647/model_metadata.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/7a00168e-4024-47d6-9002-8018c3c4b647/word_embeddings" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/7f6a4d6a-6aee-4781-9f8b-c5d7914482b9/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/7f6a4d6a-6aee-4781-9f8b-c5d7914482b9/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/84b64462-25c1-41e5-82fa-19798beca986/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/84b64462-25c1-41e5-82fa-19798beca986/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/85f0debe-3933-42af-a66e-32c8296521a9/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/85f0debe-3933-42af-a66e-32c8296521a9/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/87ab86b3-930e-4afd-bb2b-9f9d58847394/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/87ab86b3-930e-4afd-bb2b-9f9d58847394/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/898b57e5-255d-4e86-ac30-51edb7d7f0aa/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/898b57e5-255d-4e86-ac30-51edb7d7f0aa/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/8a7a302b-bab5-440b-a77a-306def0c20d9/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/8a7a302b-bab5-440b-a77a-306def0c20d9/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/8dd8de50-85d0-417f-8f1b-4153e34007b1/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/8dd8de50-85d0-417f-8f1b-4153e34007b1/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/8fe499e8-1fe0-4122-996e-e8d4df2e73f1/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/8fe499e8-1fe0-4122-996e-e8d4df2e73f1/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/8fe499e8-1fe0-4122-996e-e8d4df2e73f1/visual_model_desktop.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/9016404d-8639-4893-8e69-e8de0063ee86/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/9016404d-8639-4893-8e69-e8de0063ee86/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/95294e94-5b81-41a8-a006-5588479c6504/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/95294e94-5b81-41a8-a006-5588479c6504/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/98faf340-54f0-41f1-b25d-58b35b9c9610/global-entities_metadata" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/98faf340-54f0-41f1-b25d-58b35b9c9610/global-entities_names" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/98faf340-54f0-41f1-b25d-58b35b9c9610/global-entities_names_filter" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/98faf340-54f0-41f1-b25d-58b35b9c9610/global-entities_prefixes_filter" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/98faf340-54f0-41f1-b25d-58b35b9c9610/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/98faf340-54f0-41f1-b25d-58b35b9c9610/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/98faf340-54f0-41f1-b25d-58b35b9c9610/model_metadata.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/98faf340-54f0-41f1-b25d-58b35b9c9610/word_embeddings" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/99f66f9a-afff-445a-83f4-3523c4e1d16c/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/99f66f9a-afff-445a-83f4-3523c4e1d16c/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/9efec77b-c458-4f31-bf54-e49d56738e17/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/9efec77b-c458-4f31-bf54-e49d56738e17/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/a35a5c92-7f60-426e-a5a1-547cc6f7d879/global-entities_metadata" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/a35a5c92-7f60-426e-a5a1-547cc6f7d879/global-entities_names" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/a35a5c92-7f60-426e-a5a1-547cc6f7d879/global-entities_names_filter" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/a35a5c92-7f60-426e-a5a1-547cc6f7d879/global-entities_prefixes_filter" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/a35a5c92-7f60-426e-a5a1-547cc6f7d879/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/a35a5c92-7f60-426e-a5a1-547cc6f7d879/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/a35a5c92-7f60-426e-a5a1-547cc6f7d879/model_metadata.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/a35a5c92-7f60-426e-a5a1-547cc6f7d879/word_embeddings" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/a6fd4709-0421-4e3d-9a43-ee638476ae29/global-entities_metadata" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/a6fd4709-0421-4e3d-9a43-ee638476ae29/global-entities_names" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/a6fd4709-0421-4e3d-9a43-ee638476ae29/global-entities_names_filter" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/a6fd4709-0421-4e3d-9a43-ee638476ae29/global-entities_prefixes_filter" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/a6fd4709-0421-4e3d-9a43-ee638476ae29/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/a6fd4709-0421-4e3d-9a43-ee638476ae29/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/a6fd4709-0421-4e3d-9a43-ee638476ae29/model_metadata.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/a6fd4709-0421-4e3d-9a43-ee638476ae29/word_embeddings" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/b61e4476-cb21-406c-84db-03e81a9522e9/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/b61e4476-cb21-406c-84db-03e81a9522e9/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/bb111dda-426d-4e0b-aea2-07f770dbee90/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/bb111dda-426d-4e0b-aea2-07f770dbee90/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/bb111dda-426d-4e0b-aea2-07f770dbee90/visual_model_desktop.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/bd326f3b-f788-4a19-8ccf-59a76af147bc/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/bd326f3b-f788-4a19-8ccf-59a76af147bc/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/c0094584-dd20-47c2-b312-ee1317393eaa/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/c0094584-dd20-47c2-b312-ee1317393eaa/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/c3066f07-6a76-430d-89da-4604d4d6891f/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/c3066f07-6a76-430d-89da-4604d4d6891f/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/c3d98b15-72bb-46e6-9cc0-39d15699d7f3/global-entities_metadata" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/c3d98b15-72bb-46e6-9cc0-39d15699d7f3/global-entities_names" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/c3d98b15-72bb-46e6-9cc0-39d15699d7f3/global-entities_names_filter" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/c3d98b15-72bb-46e6-9cc0-39d15699d7f3/global-entities_prefixes_filter" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/c3d98b15-72bb-46e6-9cc0-39d15699d7f3/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/c3d98b15-72bb-46e6-9cc0-39d15699d7f3/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/c3d98b15-72bb-46e6-9cc0-39d15699d7f3/model_metadata.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/c3d98b15-72bb-46e6-9cc0-39d15699d7f3/word_embeddings" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/cde28dbc-7f5b-4892-9a4a-4d49845087f0/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/cde28dbc-7f5b-4892-9a4a-4d49845087f0/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/cf395dce-4ab5-425e-acd6-4adb7d0dd5a9/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/cf395dce-4ab5-425e-acd6-4adb7d0dd5a9/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/d933d78b-3a4a-4a2b-b049-e33d11067088/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/d933d78b-3a4a-4a2b-b049-e33d11067088/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/de4355bd-ecd9-4e91-9a88-1cd7d9855645/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/de4355bd-ecd9-4e91-9a88-1cd7d9855645/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/ec402e04-53e6-410c-92fa-12061e519475/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/ec402e04-53e6-410c-92fa-12061e519475/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/f2ef1de3-f795-49be-bd95-790caf776b35/global-entities_metadata" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/f2ef1de3-f795-49be-bd95-790caf776b35/global-entities_names" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/f2ef1de3-f795-49be-bd95-790caf776b35/global-entities_names_filter" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/f2ef1de3-f795-49be-bd95-790caf776b35/global-entities_prefixes_filter" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/f2ef1de3-f795-49be-bd95-790caf776b35/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/f2ef1de3-f795-49be-bd95-790caf776b35/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/f2ef1de3-f795-49be-bd95-790caf776b35/model_metadata.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/f2ef1de3-f795-49be-bd95-790caf776b35/word_embeddings" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/f36ec4c2-d47a-4e9c-8442-3e410552d9b2/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/f36ec4c2-d47a-4e9c-8442-3e410552d9b2/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/fb2f7a1d-422f-4ce7-8439-4bf068842185/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/fb2f7a1d-422f-4ce7-8439-4bf068842185/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/fe1c9a29-abe7-482a-a0f0-18a3ad6e2419/model-info.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/fe1c9a29-abe7-482a-a0f0-18a3ad6e2419/model.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/fe1c9a29-abe7-482a-a0f0-18a3ad6e2419/visual_model_desktop.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/shared_proto_db/000007.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/shared_proto_db/000008.ldb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/shared_proto_db/000010.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/.dart_tool/chrome-device/Default/shared_proto_db/000011.ldb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/assets/boy-avatar.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/build/flutter_assets/assets/boy-avatar.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/lib/p01_main_page/bloc/main_page_bloc.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/lib/p01_main_page/bloc/main_page_event.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/lib/p01_main_page/bloc/main_page_state.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/lib/p01_main_page/models/models.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/lib/p01_main_page/p01_main_page.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/lib/p01_main_page/view/main_page.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/lib/p01_main_page/view/mani_page_form.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/lib/p01_main_page/view/view.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/packages/api_service/analysis_options.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/packages/api_service/lib/api_service.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/packages/api_service/lib/src/api_service.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/packages/api_service/pubspec.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/packages/user_repository/lib/src/models/models.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/packages/user_repository/lib/src/models/user.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-intrface/flutter-mobile/instance-voice-chat/packages/user_repository/lib/src/models/user_info_local_store_model.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-management-service/src/main/resources/application-dev.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-management-service/src/main/resources/application-test.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/embedded-iam.iml" beforeDir="false" afterPath="$PROJECT_DIR$/embedded-iam.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway-service/gateway-service.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gateway-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../user-management-service/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../user-management-service/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../user-management-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../user-management-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../user-management-service/src/main/java/com/sina/usermanagement/infrastructure/exception/ApplicationException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../user-management-service/src/main/java/com/sina/usermanagement/infrastructure/exception/ApplicationException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../user-management-service/src/main/java/com/sina/usermanagement/infrastructure/exception/ConstraintViolationExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../user-management-service/src/main/java/com/sina/usermanagement/infrastructure/exception/ConstraintViolationExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../user-management-service/src/main/java/com/sina/usermanagement/user/api/UserResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/../user-management-service/src/main/java/com/sina/usermanagement/user/api/UserResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../user-management-service/src/main/java/com/sina/usermanagement/user/entity/UserEntityFields.java" beforeDir="false" afterPath="$PROJECT_DIR$/../user-management-service/src/main/java/com/sina/usermanagement/user/entity/UserEntityFields.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../user-management-service/src/main/java/com/sina/usermanagement/user/enumeration/UserErrorCodeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/../user-management-service/src/main/java/com/sina/usermanagement/user/enumeration/UserErrorCodeEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../user-management-service/src/main/java/com/sina/usermanagement/user/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../user-management-service/src/main/java/com/sina/usermanagement/user/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../user-management-service/src/main/java/com/sina/usermanagement/user/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../user-management-service/src/main/java/com/sina/usermanagement/user/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../user-management-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../user-management-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../user-management-service/src/main/resources/messages_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../user-management-service/src/main/resources/messages_en.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../user-management-service/src/test/java/com/sina/usermanagement/user/UserResource_QuickRegisterUser_API_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../user-management-service/src/test/java/com/sina/usermanagement/user/UserResource_QuickRegisterUser_API_Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../user-management-service/src/test/java/com/sina/usermanagement/user/UserResource_RegisterUser_API_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../user-management-service/src/test/java/com/sina/usermanagement/user/UserResource_RegisterUser_API_Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../user-management-service/src/test/java/com/sina/usermanagement/user/UserResource_userinfo_API_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../user-management-service/src/test/java/com/sina/usermanagement/user/UserResource_userinfo_API_Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../user-management-service/src/test/java/com/sina/usermanagement/user/UserTestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/../user-management-service/src/test/java/com/sina/usermanagement/user/UserTestBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../user-management-service/src/test/java/org/acme/mongodb/panache/MongoDbResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/../user-management-service/src/test/java/com/sina/usermanagement/infrastructure/mongodb/MongoDbResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../user-management-service/src/test/java/org/acme/mongodb/panache/PersonResourceIT.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../user-management-service/src/test/java/org/acme/mongodb/panache/PersonResourceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../user-management-service/user-management-service.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user-intrface/voice_chat/lib/websocket/websocket-helper.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../user-intrface/voice_chat/lib/websocket/websocket-helper.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -334,6 +53,7 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;75f76b73133857a590b5da53b7fba692&quot;,
@@ -361,10 +81,26 @@
       <workItem from="1704094133308" duration="25000" />
       <workItem from="1704094189531" duration="1314000" />
       <workItem from="1705009842025" duration="702000" />
+      <workItem from="1711286872607" duration="2845000" />
+      <workItem from="1711310449974" duration="1543000" />
+      <workItem from="1711312589395" duration="2633000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-core" />
+    <option featureType="dependencySupport" implementationName="java:org.jboss.resteasy:resteasy-core" />
+    <option featureType="dependencySupport" implementationName="java:jakarta.persistence:jakarta.persistence-api" />
+    <option featureType="dependencySupport" implementationName="java:jakarta.validation:jakarta.validation-api" />
+    <option featureType="dependencySupport" implementationName="java:io.reactivex.rxjava3:rxjava" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.data:spring-data-commons" />
+    <option featureType="dependencySupport" implementationName="java:org.hibernate.validator:hibernate-validator" />
+    <option featureType="dependencySupport" implementationName="java:jakarta.ws.rs:jakarta.ws.rs-api" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.boot:spring-boot" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-webmvc" />
+    <option featureType="dependencySupport" implementationName="java:jakarta.xml.ws:jakarta.xml.ws-api" />
   </component>
 </project>

@@ -4,8 +4,9 @@ import 'package:voice_chat/infrastructure/dependency-injection/dependency_inject
 
 
  void main() async {
-  await setupDependencies();
-  runApp(const MyApp());
+   WidgetsFlutterBinding.ensureInitialized();
+   await setupDependencies();
+   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {

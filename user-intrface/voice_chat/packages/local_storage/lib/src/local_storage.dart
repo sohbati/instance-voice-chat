@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:convert';
-import 'dart:js_util';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:user_repository/src/models/user_info_local_store_model.dart';
 import 'package:get_it/get_it.dart';

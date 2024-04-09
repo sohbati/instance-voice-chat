@@ -19,20 +19,24 @@ class FindChatPartnerForm extends StatefulWidget {
 class _FindChatPartnerFormState extends State<FindChatPartnerForm> {
 
   final WebSocketHelper _webSocketHelper = GetIt.instance<WebSocketHelper>();
-  final WebRTCHelper _webRTCHelper = GetIt.instance<WebRTCHelper>();
+  final WebRTCHelper _webRTCHelper = WebRTCHelper();
   final LocalStorage _localStorage = GetIt.instance<LocalStorage>();
 
   @override
   void initState() {
 
     //webrtc
+    _webSocketHelper.connect(_localStorage.getLocalStoredUserInfo().userId);
+
+    _webRTCHelper.setWebSocketHelper(_webSocketHelper);
     _webRTCHelper.initRenderer();
+
+
     (() async {
       await _webRTCHelper.createWebRtcPeerConnection();
       _webRTCHelper.createOfferAndSendToSignalingServer();
     })();
-    _webSocketHelper.init(_localStorage.getLocalStoredUserInfo().userId);
-
+    _webSocketHelper.setWebRTCHelper(_webRTCHelper);
     super.initState();
   }
 
@@ -40,8 +44,9 @@ class _FindChatPartnerFormState extends State<FindChatPartnerForm> {
   void dispose() {
     //webrtc
     _webRTCHelper.dispose();
-    //websocket
     _webSocketHelper.dispose();
+
+    //websocket
     super.dispose();
   }
 
@@ -83,6 +88,8 @@ class _FindChatPartnerFormState extends State<FindChatPartnerForm> {
                 borderRadius: BorderRadius.zero,
               ),
             ),
+
+
             Container(
               margin: EdgeInsets.all(0),
               padding: EdgeInsets.all(0),
@@ -94,6 +101,47 @@ class _FindChatPartnerFormState extends State<FindChatPartnerForm> {
                 borderRadius: BorderRadius.zero,
               ),
             ),
+
+            Container(
+              margin: EdgeInsets.all(0),
+              padding: EdgeInsets.all(0),
+              width: 400,
+              height: 400,
+              decoration: BoxDecoration(
+                color: Color(0x1f000000),
+                shape: BoxShape.rectangle,
+                borderRadius: BorderRadius.zero,
+                border: Border.all(color: Color(0x4d9e9e9e), width: 1),
+              ),
+              child: Align(
+                alignment: Alignment(-0.8, 0.0),
+                child: SizedBox(
+                  height: 400,
+                  child: Row(
+                    children: [
+                      Flexible(
+                        child: Container(
+                          key: Key('local'),
+                          margin: EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 5.0),
+                          decoration: BoxDecoration(color: Colors.black),
+                          child: RTCVideoView(_webRTCHelper.getLocalRenderer()),
+                        ),
+                      ),
+                      Flexible(
+                        child: Container(
+                          key: Key('remote'),
+                          margin: EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 5.0),
+                          decoration: BoxDecoration(color: Colors.black),
+                          child: RTCVideoView(_webRTCHelper.getRemoteRenderer()),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+
+
             Container(
               margin: EdgeInsets.all(0),
               padding: EdgeInsets.all(0),
@@ -137,46 +185,6 @@ class _FindChatPartnerFormState extends State<FindChatPartnerForm> {
                           )),
                     ),
                   ),
-
-                  Container(
-                    margin: EdgeInsets.all(0),
-                    padding: EdgeInsets.all(0),
-                    width: 400,
-                    height: 400,
-                    decoration: BoxDecoration(
-                      color: Color(0x1f000000),
-                      shape: BoxShape.rectangle,
-                      borderRadius: BorderRadius.zero,
-                      border: Border.all(color: Color(0x4d9e9e9e), width: 1),
-                    ),
-                    child: Align(
-                      alignment: Alignment(-0.8, 0.0),
-                      child: SizedBox(
-                              height: 400,
-                              child: Row(
-                                children: [
-                                  Flexible(
-                                    child: Container(
-                                      key: Key('local'),
-                                      margin: EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 5.0),
-                                      decoration: BoxDecoration(color: Colors.black),
-                                      child: RTCVideoView(_webRTCHelper.getLocalRenderer()),
-                                    ),
-                                  ),
-                                  Flexible(
-                                    child: Container(
-                                      key: Key('remote'),
-                                      margin: EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 5.0),
-                                      decoration: BoxDecoration(color: Colors.black),
-                                      child: RTCVideoView(_webRTCHelper.getRemoteRenderer()),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                    ),
-                  ),
-
                   Container(
                     margin: EdgeInsets.all(0),
                     padding: EdgeInsets.all(0),
@@ -203,17 +211,12 @@ class _FindChatPartnerFormState extends State<FindChatPartnerForm> {
                       ),
                     ),
                   ),
-                  ElevatedButton(
-                    onPressed: () {
-                      // _websocketChannel.sink.add("test data to send server");
-                      //FindChatMate.route();
-                    },
-                    child: Text('send Now'),
-                    style: ElevatedButton.styleFrom(foregroundColor: Colors.amber),
-                  ),
+
                 ],
               ),
             ),
+
+
             Container(
               margin: EdgeInsets.all(0),
               padding: EdgeInsets.all(0),
@@ -225,6 +228,8 @@ class _FindChatPartnerFormState extends State<FindChatPartnerForm> {
                 borderRadius: BorderRadius.zero,
               ),
             ),
+
+
             Container(
               margin: EdgeInsets.all(0),
               padding: EdgeInsets.all(0),

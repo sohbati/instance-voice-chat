@@ -1,6 +1,5 @@
 package com.sina.conversation.signaling.voicechat.websocket;
 
-import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Singleton;
 import jakarta.websocket.Session;
 

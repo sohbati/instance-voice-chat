@@ -6,6 +6,6 @@ class LogHelper {
     DateFormat dateFormat = DateFormat("yyyy-MM-dd HH:mm:ss");
     String datetime = dateFormat.format(DateTime.now());
 
-    print(datetime + ' ' + s);
+    print('$datetime $s');
   }
 }

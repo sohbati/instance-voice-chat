@@ -3,28 +3,24 @@ import 'package:get_it/get_it.dart';
 import 'package:voice_chat/find_chat_partner_form.dart';
 import 'package:local_storage/local_storage.dart';
 import 'package:api_service/api_service.dart';
+import 'package:voice_chat/websocket/websocket-helper.dart';
+// import 'package:voice_chat/infrastructure/PermissionRequest.dart';
 
 class MainPageForm extends StatefulWidget {
   const MainPageForm({super.key, required this.title});
   final String title;
-
 
   @override
   State<MainPageForm> createState() => _MainPageFormState();
 }
 
 class _MainPageFormState extends State<MainPageForm> {
-
   final LocalStorage _localStorage = GetIt.instance<LocalStorage>();
-  final ApiService _apiService = GetIt.instance<ApiService>();
 
   @override
   void initState() {
-    var userInfo = _localStorage.getLocalStoredUserInfo();
-    // (() async {
-    //     _apiService.userInfo(userInfo.userId);
-    // })();
   }
+
   @override
   Widget build(BuildContext context) {
     Color backgroundColor = Colors.grey;
@@ -184,7 +180,7 @@ class _MainPageFormState extends State<MainPageForm> {
                         child:
                         ElevatedButton(
                           onPressed: () {
-                             Navigator.push(context, MaterialPageRoute(builder: (context) {return FindChatPartnerForm();}));
+                             Navigator.push(context, MaterialPageRoute(builder: (context) {return FindChatPartnerForm(key: UniqueKey());}));
                             //FindChatMate.route();
                           },
                           child: Text('Connect Now'),
@@ -266,5 +262,10 @@ class _MainPageFormState extends State<MainPageForm> {
       );
   }
 
+
+  @override
+  void dispose() {
+
+  }
 }
 
