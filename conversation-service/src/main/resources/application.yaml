@@ -4,7 +4,7 @@ quarkus:
   log:
     file:
       path: "${LOG_FILE_LOCATION: logs/app.log}"
-      level: ALL
+      level: "DEBUG"
       enable: true
 
   banner:
