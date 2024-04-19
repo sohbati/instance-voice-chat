@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:local_storage/local_storage.dart';
+import 'package:voice_chat/infrastructure/log-helper.dart';
 import 'package:voice_chat/webrtc/webrtc-helper.dart';
 import 'package:voice_chat/websocket/websocket-helper.dart';
 
@@ -37,16 +38,16 @@ class _FindChatPartnerFormState extends State<FindChatPartnerForm> {
       _webRTCHelper.createOfferAndSendToSignalingServer();
     })();
     _webSocketHelper.setWebRTCHelper(_webRTCHelper);
+
     super.initState();
   }
 
   @override
   void dispose() {
+    LogHelper.log("dispose called");
     //webrtc
     _webRTCHelper.dispose();
     _webSocketHelper.dispose();
-
-    //websocket
     super.dispose();
   }
 

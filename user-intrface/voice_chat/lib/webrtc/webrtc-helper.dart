@@ -44,15 +44,17 @@ class WebRTCHelper {
 
   //webrtc
   Future<RTCPeerConnection>createWebRtcPeerConnection() async {
-    Map<String, dynamic> configuration = {
-      "iceServers": [
-        {"url": "stun:stun.l.google.com:19302"}
+    final Map<String, dynamic> configuration = {
+      'iceServers': [
+        // {'urls': 'stun:stun.l.google.com:19302'},
+        {'urls': 'stun:194.5.175.224:3478'},
+        // Add more ICE servers if needed
       ]
     };
     final Map<String, dynamic> offerSdpConstraints = {
       "mandatory": {
         "OfferToReceiveAudio": true,
-        "OfferToReceiveVideo": true,
+        "OfferToReceiveVideo": false,
       },
       "optinal":[],
     };
@@ -60,9 +62,9 @@ class WebRTCHelper {
     RTCPeerConnection pc = await createPeerConnection(
         configuration, offerSdpConstraints);
     // pc.addStream(_localStream);
-    final videoTrack = _localStream.getVideoTracks().first;
-    pc.addTrack(videoTrack, _localStream);
-
+    // final videoTrack = _localStream.getVideoTracks().first;
+    // pc.addTrack(videoTrack, _localStream);
+    _localStream?.getTracks().forEach((track) { pc?.addTrack(track, _localStream!); });
 
     pc.onIceCandidate = (e) {
       if (e.candidate != null) {
@@ -103,6 +105,7 @@ class WebRTCHelper {
       // }
     };
     _peerConnection = pc;
+    LogHelper.log("The peer connection created");
     return pc;
   }
 
@@ -114,9 +117,9 @@ class WebRTCHelper {
   _getUserMedia() async {
     final Map<String, dynamic> mediaConstraints = {
       'audio': true,
-      'video': {
-        'facingMode': 'user'
-      }
+      // 'video': {
+      //   'facingMode': 'user'
+      // }
     };
     // await requestPermissions();
     MediaStream stream = await navigator.mediaDevices.getUserMedia(mediaConstraints);
@@ -134,7 +137,7 @@ class WebRTCHelper {
     var session = parse(sdp!);
     String jsonSession = json.encode(session);
     _webSocketHelper.sendOfferToSignalingServer(jsonSession);
-    LogHelper.log('Offer sdp sent to signaling server');
+    // LogHelper.log('Offer sdp sent to signaling server');
     _peerConnection.getIceConnectionState().then((value) => LogHelper.log("RTC ICE STATE :$value"));
 
     getRTCPeerConnection().setLocalDescription(description!);
@@ -187,11 +190,11 @@ class WebRTCHelper {
       new RTCIceCandidate(session['candidate'], session['sdpMid'], session['sdpMLineIndex']);
 
     LogHelper.log(_peerConnection.getIceConnectionState().toString());
-    _peerConnection.getIceConnectionState().then((value) => print(value));
+    _peerConnection.getIceConnectionState().then((value) => LogHelper.log(value.toString()));
     await _peerConnection.addCandidate(candidate).then((_) {
         LogHelper.log('Candidate set successfully');
     }).onError((error, stackTrace) {
-       print(error);
+       LogHelper.log(error.toString());
        print(stackTrace);
     });
 

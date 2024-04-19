@@ -29,13 +29,14 @@ class WebSocketHelper {
     // final wsUrl = Uri.parse('ws://localhost:8082/users/$userId/voice-chat-signaling');
     // final wsUrl = Uri.parse('ws://localhost:8888/ws/voice-chat-signaling/users/$userId/voice-chat-signaling');
     _websocketChannel = WebSocketChannel.connect(wsUrl);
-    print("Connection established: $wsUrl");
+    LogHelper.log("Connection established: $wsUrl");
     webSocketListener();
     _isConnected = true;
   }
 
   void dispose() {
-    _websocketChannel.sink.close(status.goingAway);
+    LogHelper.log("dispose called. web socket closed");
+    _websocketChannel.sink.close(status.normalClosure);
     _isConnected = false;
   }
 
@@ -53,9 +54,10 @@ class WebSocketHelper {
 
   void sendCandidateToSignalingServer(String candidateStr) {
     var message = getWebsocketDataInstance(WebsocketDataType.CANDIDATE, candidateStr);
-    addMessage(message);
-    LogHelper.log('A ' + WebsocketDataType.CANDIDATE.toString() + ' sent');
-
+    if(_isConnected) {
+      addMessage(message);
+      LogHelper.log('A ' + WebsocketDataType.CANDIDATE.toString() + ' sent');
+    }
   }
 
   WebsocketData getWebsocketDataInstance(WebsocketDataType type, String str) {
@@ -65,6 +67,7 @@ class WebSocketHelper {
   }
 
   void addMessage(WebsocketData message) {
+
     _messages.add(message);
     if (_isConnected && !_isSending) {
       sendMessages();
@@ -78,12 +81,11 @@ class WebSocketHelper {
     }
 
     _isSending = true;
-    WebsocketData messageToSend = _messages.first;
+    String messageToSend = _messages.first.toString();
 
     // Simulate network request delay
     Future.delayed(Duration(seconds: 2), () {
       // Send message to server via WebSocket
-      // print('Sending message to server: $messageToSend');
       _websocketChannel.sink.add(messageToSend);
       _messages.removeAt(0);
       sendMessages();
@@ -106,17 +108,16 @@ class WebSocketHelper {
     },
       onDone: () {
         // Handle the connection closing
+        _isConnected = false;
         LogHelper.log('Connection closed');
       },
       onError: (error) {
-        // Handle any errors that occur
         LogHelper.log('Error: $error');
       },
       cancelOnError: true,);
   }
 
   void clientMessageDispatcher(String message) async {
-    // LogHelper.log(printmessage);
     Map<String, dynamic> map =  json.decode(message);
     WebsocketData data = WebsocketData.fromJson(map);
     LogHelper.log(data.type.toString() + " Received");
