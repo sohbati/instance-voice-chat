@@ -1,0 +1,5 @@
+2024-03-28 22:32:38,882 rsohbati-mac-co quarkus-run.jar[74093] INFO  [io.und.websockets] (main) UT026003: Adding annotated server endpoint class com.sina.conversation.signaling.voicechat.websocket.VoiceChatResourceWebSocket for path /users/{userId}/voice-chat-signaling
+2024-03-28 22:32:39,319 rsohbati-mac-co quarkus-run.jar[74093] INFO  [io.quarkus] (main) conversation-service-service 1.0.0 on JVM (powered by Quarkus 3.5.3) started in 1.046s. Listening on: http://0.0.0.0:8082
+2024-03-28 22:32:39,320 rsohbati-mac-co quarkus-run.jar[74093] INFO  [io.quarkus] (main) Profile prod activated. 
+2024-03-28 22:32:39,320 rsohbati-mac-co quarkus-run.jar[74093] INFO  [io.quarkus] (main) Installed features: [cdi, config-yaml, hibernate-validator, mongodb-client, mongodb-panache, narayana-jta, resteasy-reactive, resteasy-reactive-jackson, scheduler, smallrye-context-propagation, smallrye-health, smallrye-openapi, vertx, websockets, websockets-client]
+2024-03-28 22:34:28,486 rsohbati-mac-co quarkus-run.jar[74093] INFO  [io.quarkus] (main) conversation-service-service stopped in 0.126s
